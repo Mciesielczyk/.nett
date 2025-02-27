@@ -8,10 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="400c6403-df72-4951-a60b-e9d27cc20c04" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MyApp/MyApp.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyApp/bin/Debug/net9.0/MyApp.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyApp/bin/Debug/net9.0/MyApp.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyServices/MyServices.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +73,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740652241036</updated>
-      <workItem from="1740652242513" duration="4256000" />
+      <workItem from="1740652242513" duration="5205000" />
     </task>
     <servers />
   </component>

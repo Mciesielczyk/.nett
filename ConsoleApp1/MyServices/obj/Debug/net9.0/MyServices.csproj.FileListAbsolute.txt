@@ -1,0 +1,11 @@
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\bin\Debug\net9.0\MyServices.deps.json
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\bin\Debug\net9.0\MyServices.dll
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\bin\Debug\net9.0\MyServices.pdb
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\obj\Debug\net9.0\MyServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\obj\Debug\net9.0\MyServices.AssemblyInfoInputs.cache
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\obj\Debug\net9.0\MyServices.AssemblyInfo.cs
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\obj\Debug\net9.0\MyServices.csproj.CoreCompileInputs.cache
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\obj\Debug\net9.0\MyServices.dll
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\obj\Debug\net9.0\refint\MyServices.dll
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\obj\Debug\net9.0\MyServices.pdb
+C:\Users\ciesi\temp\ConsoleApp1\MyServices\obj\Debug\net9.0\ref\MyServices.dll

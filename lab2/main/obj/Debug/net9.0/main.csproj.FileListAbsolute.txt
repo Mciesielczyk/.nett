@@ -1,0 +1,15 @@
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\bin\Debug\net9.0\main.exe
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\bin\Debug\net9.0\main.deps.json
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\bin\Debug\net9.0\main.runtimeconfig.json
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\bin\Debug\net9.0\main.dll
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\bin\Debug\net9.0\main.pdb
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\obj\Debug\net9.0\main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\obj\Debug\net9.0\main.AssemblyInfoInputs.cache
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\obj\Debug\net9.0\main.AssemblyInfo.cs
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\obj\Debug\net9.0\main.csproj.CoreCompileInputs.cache
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\obj\Debug\net9.0\main.sourcelink.json
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\obj\Debug\net9.0\main.dll
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\obj\Debug\net9.0\refint\main.dll
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\obj\Debug\net9.0\main.pdb
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\obj\Debug\net9.0\main.genruntimeconfig.cache
+C:\Users\ciesi\Desktop\Lato\.net\lab2\.nett\lab2\main\obj\Debug\net9.0\ref\main.dll

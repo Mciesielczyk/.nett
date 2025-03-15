@@ -12,7 +12,6 @@
           "NUnit": "3.14.0",
           "NUnit.Analyzers": "3.9.0",
           "NUnit3TestAdapter": "4.5.0",
-          "Test": "1.0.0",
           "coverlet.collector": "6.0.0",
           "lab3": "1.0.0"
         },
@@ -325,14 +324,6 @@
             "fileVersion": "1.0.0.0"
           }
         }
-      },
-      "Test/1.0.0": {
-        "runtime": {
-          "Test.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -434,11 +425,6 @@
       "hashPath": "system.reflection.metadata.1.6.0.nupkg.sha512"
     },
     "lab3/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Test/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

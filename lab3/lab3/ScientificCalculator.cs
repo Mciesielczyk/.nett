@@ -21,8 +21,13 @@ public class ScientificCalculator
 
     public double pierwiastek(double a)
     {
+        if (a < 0)
+        {
+            return a;
+        }
         return Math.Sqrt(a);
     }
+    
 
     public double log(double a)
     {

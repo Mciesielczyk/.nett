@@ -79,7 +79,8 @@ public class CalculatorService
                         string input7String = Console.ReadLine();
                         double input8 = Convert.ToDouble(input7String);
                         result = calculator2.pierwiastek(input8);
-                        Console.WriteLine(result);
+                        if (result<0)Console.WriteLine("zla liczba");
+                        else Console.WriteLine(result);
                         break;
                     case "log":
                         Console.WriteLine("Podaj liczbe");

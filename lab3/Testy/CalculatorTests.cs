@@ -26,4 +26,9 @@ public class Tests
     {
         Assert.AreEqual(10,calculator.mnozenie(5,2),"test mnozenie");
     }
+    [Test]
+    public void TestDzielenieZero()
+    {
+        Assert.AreEqual(0,calculator.dzielenie(1,0),"test dzielenie przez 0");
+    }
 }

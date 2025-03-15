@@ -21,6 +21,11 @@ public class ScientificCalculatorTests
         Assert.AreEqual(2,calculatorScientific.pierwiastek(4),"test pierwiastek");
     }
     [Test]
+    public void TestPierwiastekUj()
+    {
+        Assert.AreEqual(-4,calculatorScientific.pierwiastek(-4),"test pierwiastek uj");
+    }
+    [Test]
     public void TestAvg()
     {
         double[] tab= new double[] { 1, 2, 3, 4 };

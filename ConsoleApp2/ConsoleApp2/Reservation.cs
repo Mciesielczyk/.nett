@@ -6,16 +6,35 @@ public class Reservation
     private  Vehicle ReservationVehicle;
     private string Customer;
     private DateTime Date;
+    private static int id = 1;
 
-    Reservation(int ReservationID, Vehicle ReservationVehicle, string Customer, DateTime Date)
+   
+    public Reservation(Vehicle ReservationVehicle, string Customer, DateTime Date)
     {
-        this.ReservationID = ReservationID;
+        this.ReservationID = id++;
         this.ReservationVehicle = ReservationVehicle;
         this.Customer = Customer;
         this.Date = Date;
         
     }
 
+    public Vehicle GetVehicle()
+    {
+        return this.ReservationVehicle;
+    }
+
+    public int getReservationID()
+    {
+        return this.ReservationID;
+    }
+    public void displayReservation()
+    {
+        Console.WriteLine($"\nReservation ID: {ReservationID} \nCustomer: {Customer} \nDate: {Date}");
+    }
+
+    public void remoweReservation()
+    {
+    }
     public override string ToString()
     {
         return base.ToString();

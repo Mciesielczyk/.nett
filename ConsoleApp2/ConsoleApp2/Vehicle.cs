@@ -2,6 +2,11 @@
 
 public abstract class Vehicle
 {
+    RentalCompany company = RentalCompany.Instance;
+
+    private int EngineCapacity;
+    public bool isAvailable { get; set; }
+    
     private int Id;
     private string Model;
     private string Brand;
@@ -22,5 +27,34 @@ public abstract class Vehicle
     }
 
     public abstract void DisplayInfo();
+    public abstract void Reserve(string name);
+    
+    public abstract void CancelReserve();
 
+    public int getId()
+    {
+        return this.Id;
+    }
+   
+
+    public string getModel()
+    {
+        return this.Model;
+    }
+    public string getBrand()
+    {
+        return this.Brand;
+    }
+
+
+    public int getYear()
+    {
+        return this.Year;
+    }
+
+    public bool getIsAvailable()
+    {
+        return this.IsAvailable;
+    }
+    
 }

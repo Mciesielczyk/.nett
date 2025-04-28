@@ -3,35 +3,37 @@ name: CI for Projekt branch
 on:
   push:
     branches:
-      - Projekt  # Workflow uruchomi się tylko na push do gałęzi 'Projekt'
+      - Projekt
   pull_request:
     branches:
-      - Projekt  # Workflow uruchomi się tylko na pull requesty do gałęzi 'Projekt'
-  workflow_dispatch:  # Pozwala na ręczne uruchomienie workflow przez interfejs GitHub
+      - Projekt
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Uruchamianie na systemie Linux (ubuntu)
+    runs-on: ubuntu-latest
 
     steps:
-      # Pierwszy krok - checkout kodu
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Krok ustawiania wersji .NET
       - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'  # Ustawienie wersji .NET (możesz zmienić na wersję, której używasz) 
+          dotnet-version: '8.0.x'
 
-      # Krok przywracania zależności
+      # Przechodzimy do katalogu, w którym znajduje się plik projektu
+      - name: Change directory to project folder
+        run: cd System_Zarz
+
+      # Przywracamy zależności w projekcie
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore System_Zarz.csproj
 
-      # Krok budowania projektu
+      # Budujemy projekt
       - name: Build the project
-        run: dotnet build
+        run: dotnet build System_Zarz.csproj
 
-      # Krok uruchamiania testów
+      # Uruchamiamy testy
       - name: Run tests
-        run: dotnet test
+        run: dotnet test System_Zarz.csproj

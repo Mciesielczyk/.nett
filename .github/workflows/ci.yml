@@ -32,8 +32,8 @@ jobs:
 
       # Budujemy projekt
       - name: Build the project
-        run: dotnet build System_Zarz.csproj
+        run: dotnet build System_Zarz/System_Zarz.csproj
 
       # Uruchamiamy testy
       - name: Run tests
-        run: dotnet test System_Zarz.csproj
+        run: dotnet test System_Zarz/System_Zarz.csproj

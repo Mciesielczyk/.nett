@@ -227,3 +227,9 @@ C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net9.0\runtimes\w
 C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\obj\Debug\net9.0\System_Zarz.csproj.AssemblyReference.cache
 C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\obj\Debug\net9.0\System_Z.B5E85D69.Up2Date
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\obj\Debug\net9.0\System_Zarz.sourcelink.json
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\obj\Debug\net9.0\System_Zarz.MvcApplicationPartsAssemblyInfo.cs

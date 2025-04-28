@@ -6,13 +6,22 @@ public class Program
     public static void Main(string[] args)
     {
         
+       
         var builder = WebApplication.CreateBuilder(args);
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
         // Add services to the container.
         builder.Services.AddControllersWithViews();
 
         var app = builder.Build();
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
@@ -27,11 +36,11 @@ public class Program
 
         app.UseAuthorization();
 
-        app.MapStaticAssets();
+        app.UseStaticFiles(); // Włącza obsługę statycznych plików
         app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}")
-            .WithStaticAssets();
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}/{id?}");
+
     
       
 

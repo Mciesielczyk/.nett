@@ -28,7 +28,7 @@ jobs:
 
       # Przywracamy zależności w projekcie
       - name: Restore dependencies
-        run: dotnet restore System_Zarz.csproj
+        run: dotnet restore System_Zarz/System_Zarz.csproj
 
       # Budujemy projekt
       - name: Build the project

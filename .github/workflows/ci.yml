@@ -1,0 +1,37 @@
+name: CI for Projekt branch
+
+on:
+  push:
+    branches:
+      - Projekt  # Workflow uruchomi się tylko na push do gałęzi 'Projekt'
+  pull_request:
+    branches:
+      - Projekt  # Workflow uruchomi się tylko na pull requesty do gałęzi 'Projekt'
+  workflow_dispatch:  # Pozwala na ręczne uruchomienie workflow przez interfejs GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Uruchamianie na systemie Linux (ubuntu)
+
+    steps:
+      # Pierwszy krok - checkout kodu
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Krok ustawiania wersji .NET
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'  # Ustawienie wersji .NET (możesz zmienić na wersję, której używasz) 
+
+      # Krok przywracania zależności
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # Krok budowania projektu
+      - name: Build the project
+        run: dotnet build
+
+      # Krok uruchamiania testów
+      - name: Run tests
+        run: dotnet test

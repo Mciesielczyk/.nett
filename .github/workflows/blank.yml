@@ -25,12 +25,21 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+ # Instalacja .NET SDK
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+           # Przywracanie zależności
+      - name: Restore dependencies
+        run: dotnet restore
+        
+     
+ # Budowanie projektu
+      - name: Build the project
+        run: dotnet build
+
+      # Uruchamianie testów
+      - name: Run tests
+        run: dotnet test

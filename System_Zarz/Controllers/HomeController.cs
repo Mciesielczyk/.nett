@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-//using System_Zarz.Data; // zmień namespace jeśli trzeba
+using System_Zarz.Data; // zmień namespace jeśli trzeba
 using System_Zarz.Models; // namespace dla Customer
 
 public class HomeController : Controller

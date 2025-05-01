@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System_Zarz.Data;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -18,7 +19,28 @@ public class CustomersController : ControllerBase
         var customers = await _context.Customers.ToListAsync();
         return Ok(customers);
     }
+
+    // Znajdowanie klienta po id
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetCustomerById(int id)
+    {
+        var customer = await _context.Customers.FindAsync(id);
+        if (customer == null)
+        {
+            return NotFound(); // Zwróć 404 jeśli nie znaleziono
+        }
+        return Ok(customer);
+    }
     
+    // Dodanie nowego klienta
+    [HttpPost]
+    public async Task<IActionResult> AddCustomer([FromBody] Customer newCustomer)
+    {
+        _context.Customers.Add(newCustomer);
+        await _context.SaveChangesAsync();
+        return CreatedAtAction(nameof(GetCustomers), new { id = newCustomer.Id  }, newCustomer);
+}
+
     [HttpPut("updatePhone/{fullName}")]
     public async Task<IActionResult> UpdatePhoneNumber(string fullName, [FromBody] string newPhoneNumber)
     {
@@ -39,5 +61,16 @@ public class CustomersController : ControllerBase
         await _context.SaveChangesAsync();
 
         return Ok($"Phone number for {fullName} has been updated to {newPhoneNumber}.");
+    }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteCustomer(int id)
+    {
+        var customer = await _context.Customers.FindAsync(id);
+        if (customer == null)
+            return NotFound();
+
+        _context.Customers.Remove(customer);
+        await _context.SaveChangesAsync();
+        return NoContent();
     }
 }

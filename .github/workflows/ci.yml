@@ -36,4 +36,4 @@ jobs:
 
       # Uruchamiamy testy
       - name: Run tests
-        run: dotnet test System_Zarz/System_Zarz.csproj
+        run: dotnet test System_Zarz/MyProject.Tests/MyProject.Tests.csproj --no-build --verbosity normal

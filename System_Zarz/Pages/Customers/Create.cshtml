@@ -1,0 +1,23 @@
+﻿@page
+@model System_Zarz.Pages.Customers.CreateModel
+@{
+    ViewData["Title"] = "Add New Customer";
+}
+
+<h2>Add New Customer</h2>
+
+<form method="post">
+    <div>
+        <label asp-for="Customer.FullName"></label>
+        <input asp-for="Customer.FullName" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Customer.Email"></label>
+        <input asp-for="Customer.Email" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Customer.Phone"></label>
+        <input asp-for="Customer.Phone" class="form-control" />
+    </div>
+    <button type="submit">Add</button>
+</form>

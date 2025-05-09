@@ -15,6 +15,7 @@ public class Program
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        builder.Services.AddRazorPages();
 
         var app = builder.Build();
         if (app.Environment.IsDevelopment())
@@ -37,12 +38,13 @@ public class Program
         app.UseAuthorization();
 
         app.UseStaticFiles(); // Włącza obsługę statycznych plików
-        app.MapControllerRoute(
+        /*app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
+        */
+        app.MapRazorPages();
 
-    
-      
+
 
         app.Run();
     }

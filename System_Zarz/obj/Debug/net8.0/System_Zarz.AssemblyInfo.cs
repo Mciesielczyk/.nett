@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("System_Zarz")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3073c735257776ba71afbfc1af714a6a0c836aff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee9ee54ed755ff9de6f78b3f84a7e98af2a6b066")]
 [assembly: System.Reflection.AssemblyProductAttribute("System_Zarz")]
 [assembly: System.Reflection.AssemblyTitleAttribute("System_Zarz")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

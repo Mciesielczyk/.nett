@@ -1,0 +1,73 @@
+﻿@page
+@model System_Zarz.Pages.Customers.EditModel
+@{
+    ViewData["Title"] = "Edit Customer";
+}
+
+<h2>Edit Customer</h2>
+
+
+
+<form method="get">
+    <label>Wyszukaj klienta po ID:</label>
+    <input type="number" name="SearchId" value="@Model.SearchId" />
+    <button type="submit">Szukaj</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <p style="color: @(Model.Message.Contains("❌") ? "red" : "green")">@Model.Message</p>
+}
+
+@if (Model.Customer != null && Model.Customer.Id != 0)
+{
+    <form method="post">
+        <input type="hidden" asp-for="Customer.Id" />
+
+        <div>
+            <label asp-for="Customer.FullName"></label>
+            <input asp-for="Customer.FullName" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Customer.Email"></label>
+            <input asp-for="Customer.Email" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Customer.Phone"></label>
+            <input asp-for="Customer.Phone" class="form-control" />
+        </div>
+        <button type="submit">Zapisz zmiany</button>
+    </form>
+}
+
+<hr />
+<h3>Wszyscy klienci</h3>
+<table border="1" cellpadding="5">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Imię i nazwisko</th>
+        <th>Email</th>
+        <th>Telefon</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var c in Model.AllCustomers)
+    {
+        <tr>
+            <td>@c.Id</td>
+            <td>@c.FullName</td>
+            <td>@c.Email</td>
+            <td>@c.Phone</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<p>
+    <a class="btn btn-secondary" href="/Account/Profile">← Powrót do menu</a>
+</p>

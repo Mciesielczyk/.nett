@@ -27,6 +27,12 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                     </li>
                 </ul>
+
+                <form method="post" asp-page="/Account/Logout" class="d-flex align-items-center">
+                    <button type="submit" class="btn btn-link nav-link" style="cursor:pointer;">Wyloguj</button>
+                </form>
+
+                
             </div>
         </div>
     </nav>

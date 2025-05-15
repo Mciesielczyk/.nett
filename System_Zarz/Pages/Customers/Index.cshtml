@@ -1,0 +1,32 @@
+﻿@page
+@model System_Zarz.Pages.Customers.IndexModel
+@{
+    ViewData["Title"] = "Lista klientów";
+}
+
+<h2>Lista klientów</h2>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Pełne imię</th>
+        <th>Email</th>
+        <th>Telefon</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var customer in Model.Customers)
+    {
+        <tr>
+            <td>@customer.Id</td>
+            <td>@customer.FullName</td>
+            <td>@customer.Email</td>
+            <td>@customer.Phone</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<p>
+    <a class="btn btn-secondary" href="/Account/Profile">← Powrót do menu</a>
+</p>

@@ -1,0 +1,18 @@
+﻿@page
+@model System_Zarz.Pages.Vehicles.DeleteModel
+@{
+    ViewData["Title"] = "Usuń pojazd";
+}
+
+<h2>Usuń pojazd</h2>
+
+<h4>Czy na pewno chcesz usunąć pojazd:</h4>
+<div>
+    <strong>VIN:</strong> @Model.Vehicle.VIN <br />
+    <strong>Rejestracja:</strong> @Model.Vehicle.RegistrationNumber
+</div>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger mt-3">Usuń</button>
+    <a asp-page="Index" class="btn btn-secondary mt-3">Anuluj</a>
+</form>

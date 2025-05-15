@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System_Zarz.Data;
@@ -5,6 +6,7 @@ using System_Zarz.Models;
 
 namespace System_Zarz.Pages.Customers;
 
+[Authorize(Roles = "Admin")]
 public class CreateModel : PageModel
 {
     private readonly ApplicationDbContext _context;
@@ -17,6 +19,9 @@ public class CreateModel : PageModel
     [BindProperty]
     public Customer Customer { get; set; } = new();
 
+    public bool SuccessMessage { get; set; } = false;
+    public string? ErrorMessage { get; set; }
+
     public void OnGet()
     {
     }
@@ -24,11 +29,25 @@ public class CreateModel : PageModel
     public async Task<IActionResult> OnPostAsync()
     {
         if (!ModelState.IsValid)
+        {
+            ErrorMessage = "❌ Wystąpił błąd. Upewnij się, że wszystkie pola są poprawnie wypełnione.";
             return Page();
+        }
 
-        _context.Customers.Add(Customer);
-        await _context.SaveChangesAsync();
+        try
+        {
+            _context.Customers.Add(Customer);
+            await _context.SaveChangesAsync();
 
-        return RedirectToPage("/Index"); // przekieruj po zapisaniu
+            SuccessMessage = true;
+            ModelState.Clear();
+            Customer = new();
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"❌ Wystąpił błąd przy zapisie: {ex.Message}";
+        }
+
+        return Page();
     }
 }

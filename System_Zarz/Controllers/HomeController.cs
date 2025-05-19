@@ -5,7 +5,12 @@ using System_Zarz.Models; // namespace dla Customer
 public class HomeController : Controller
 {
     private readonly ApplicationDbContext _context;
-
+    
+    public IActionResult Privacy()
+    {
+        return Content("To jest strona Privacy - nie masz zadnych praw.");
+    }
+    
     public HomeController(ApplicationDbContext context)
     {
         _context = context;

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System_Zarz.Data;
-using Task = System.Threading.Tasks.Task; // lub gdzie jest ApplicationDbContext
+using Task = System.Threading.Tasks.Task; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -106,5 +106,8 @@ app.MapGet("/", context =>
     context.Response.Redirect("/Account/Login");
     return Task.CompletedTask;
 });
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

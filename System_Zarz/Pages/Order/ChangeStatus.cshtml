@@ -1,0 +1,37 @@
+﻿@page
+@model ChangeStatusModel
+@{
+    ViewData["Title"] = "Zmień status zlecenia";
+}
+
+<h2>Zmień status zlecenia</h2>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-success">@Model.Message</div>
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="orderId">Zlecenie</label>
+        <select asp-for="SelectedOrderId" asp-items="Model.Orders" class="form-control">
+            <option value="">-- Wybierz zlecenie --</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="status">Nowy status</label>
+        <select asp-for="NewStatus" class="form-control">
+            <option value="">-- Wybierz status --</option>
+            <option value="Nowe">Nowe</option>
+            <option value="W trakcie">W trakcie</option>
+            <option value="Zakończone">Zakończone</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Zmień status</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

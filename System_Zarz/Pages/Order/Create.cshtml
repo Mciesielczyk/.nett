@@ -1,0 +1,54 @@
+﻿@page
+@model CreateModel
+
+<h2>Utwórz nowe zlecenie</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Order.VehicleId">Pojazd</label>
+        <select asp-for="Order.VehicleId" asp-items="Model.Vehicles" class="form-control">
+            <option value="">-- Wybierz pojazd --</option>
+        </select>
+        <span asp-validation-for="Order.VehicleId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Order.Description">Opis problemu</label>
+        <textarea asp-for="Order.Description" class="form-control"></textarea>
+        <span asp-validation-for="Order.Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Przypisz mechaników</label>
+        <select asp-for="selectedMechanics" asp-items="Model.Mechanics" class="form-control" multiple></select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Utwórz zlecenie</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

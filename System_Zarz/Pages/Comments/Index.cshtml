@@ -1,0 +1,60 @@
+﻿@page
+@model System_Zarz.Pages.Comments.IndexModel
+@{
+    ViewData["Title"] = "Komentarze";
+}
+
+<div class="container mt-5">
+    <h2>Komentarze do zleceń</h2>
+    @if (!string.IsNullOrEmpty(Model.StatusMessage))
+    {
+        <div class="alert alert-success">@Model.StatusMessage</div>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="alert alert-danger">@Model.ErrorMessage</div>
+    }
+
+    <form method="post" class="mb-4">
+        <div class="mb-3">
+            <label asp-for="NewComment.OrderId" class="form-label">ID zlecenia</label>
+            <input asp-for="NewComment.OrderId" class="form-control" />
+            <span asp-validation-for="NewComment.OrderId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="NewComment.Text" class="form-label">Treść komentarza</label>
+            <textarea asp-for="NewComment.Text" class="form-control"></textarea>
+            <span asp-validation-for="NewComment.Text" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success">Dodaj komentarz</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Zlecenie</th>
+            <th>Autor</th>
+            <th>Data</th>
+            <th>Treść</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var comment in Model.Comments)
+        {
+            <tr>
+                <td>@comment.Id</td>
+                <td>Zlecenie #@comment.OrderId</td>
+                <td>@comment.User.Email</td>
+                <td>@comment.CreatedAt.ToString("g")</td>
+                <td>@comment.Text</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

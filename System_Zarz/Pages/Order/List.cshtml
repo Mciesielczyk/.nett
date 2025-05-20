@@ -1,0 +1,44 @@
+﻿@page
+@model OrdersListModel
+@{
+    ViewData["Title"] = "Lista wszystkich zleceń";
+}
+
+<h2>Wszystkie zlecenia</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Data utworzenia</th>
+        <th>Opis</th>
+        <th>Pojazd</th>
+        <th>Mechanicy</th>
+        <th>Zadania</th>
+        <th>Części</th>
+        <th>Komentarze</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var order in Model.Orders)
+    {
+        <tr>
+            <td>@order.Id</td>
+            <td>@order.Status</td>
+            <td>@order.CreatedDate.ToString("yyyy-MM-dd HH:mm")</td>
+            <td>@order.Description</td>
+            <td>
+                @order.Vehicle?.Brand @order.Vehicle?.Model <br />
+                @order.Vehicle?.RegistrationNumber
+            </td>
+            <td>
+                @string.Join(", ", order.Mechanics.Select(m => m.Mechanic.UserName))
+            </td>
+            <td>@order.Tasks.Count</td>
+            <td>@order.Parts.Count</td>
+            <td>@order.Comments.Count</td>
+        </tr>
+    }
+    </tbody>
+</table>

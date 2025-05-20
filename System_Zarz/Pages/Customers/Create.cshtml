@@ -6,18 +6,42 @@
 
 <h2>Add New Customer</h2>
 
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div style="color: red; margin-bottom: 1rem;">
+        @Model.ErrorMessage
+    </div>
+}
+
+@if (Model.SuccessMessage)
+{
+    <div style="color: green; margin-bottom: 1rem;">
+        ✅ Klient został pomyślnie dodany.
+    </div>
+}
+
 <form method="post">
     <div>
         <label asp-for="Customer.FullName"></label>
         <input asp-for="Customer.FullName" class="form-control" />
+        <span asp-validation-for="Customer.FullName" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="Customer.Email"></label>
         <input asp-for="Customer.Email" class="form-control" />
+        <span asp-validation-for="Customer.Email" class="text-danger"></span>
     </div>
     <div>
         <label asp-for="Customer.Phone"></label>
         <input asp-for="Customer.Phone" class="form-control" />
+        <span asp-validation-for="Customer.Phone" class="text-danger"></span>
     </div>
     <button type="submit">Add</button>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+<p>
+    <a class="btn btn-secondary" href="/Account/Profile">← Powrót do menu</a>
+</p>

@@ -1,0 +1,46 @@
+﻿@page
+@model System_Zarz.Pages.Admin.ManageRolesModel
+@{
+    ViewData["Title"] = "Zarządzaj rolami użytkowników";
+}
+
+<h2>Zarządzaj rolami</h2>
+
+@if (!string.IsNullOrEmpty(Model.StatusMessage))
+{
+    <p style="color:green">@Model.StatusMessage</p>
+}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Email</th>
+        <th>Aktualne Role</th>
+        <th>Przypisz Rolę</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model.Users)
+    {
+        <tr>
+            <td>@user.Email</td>
+            <td>@string.Join(", ", user.Roles)</td>
+            <td>
+                <form method="post">
+                    <input type="hidden" name="UserId" value="@user.Id" />
+                    <select name="SelectedRole">
+                        <option value="">-- wybierz --</option>
+                        <option value="Recepcjonista">Recepcjonista</option>
+                        <option value="Mechanik">Mechanik</option>
+                    </select>
+                    <button type="submit">Nadaj</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<p>
+    <a class="btn btn-secondary" href="/Account/Profile">← Powrót do menu</a>
+</p>

@@ -1,0 +1,32 @@
+﻿@page
+@model System_Zarz.Pages.Account.RegisterModel
+@{
+    ViewData["Title"] = "Rejestracja";
+}
+
+<h2>Rejestracja</h2>
+
+<form method="post">
+    <div>
+        <label asp-for="Input.Email"></label>
+        <input asp-for="Input.Email" />
+        <span asp-validation-for="Input.Email"></span>
+    </div>
+    <div>
+        <label asp-for="Input.Password"></label>
+        <input asp-for="Input.Password" type="password" />
+        <span asp-validation-for="Input.Password"></span>
+    </div>
+    <div>
+        <label asp-for="Input.ConfirmPassword"></label>
+        <input asp-for="Input.ConfirmPassword" type="password" />
+        <span asp-validation-for="Input.ConfirmPassword"></span>
+    </div>
+    <button type="submit">Zarejestruj</button>
+</form>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

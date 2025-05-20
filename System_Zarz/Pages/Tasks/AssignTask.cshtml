@@ -1,0 +1,23 @@
+﻿@page
+@model AssignTasksModel
+@{
+    ViewData["Title"] = "Przypisz czynności do zlecenia";
+}
+
+<h1>Przypisz czynności do zlecenia</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="OrderId">Zlecenie</label>
+        <select asp-for="OrderId" asp-items="Model.Orders" class="form-control">
+            <option value="">-- Wybierz zlecenie --</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="SelectedTaskIds">Czynności</label>
+        <select asp-for="SelectedTaskIds" asp-items="Model.AllTasks" class="form-control" multiple></select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Przypisz</button>
+</form>

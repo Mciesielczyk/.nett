@@ -1,0 +1,63 @@
+﻿@page
+@model System_Zarz.Pages.Account.ProfileModel
+@{
+    ViewData["Title"] = "Twoje konto";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2>Witaj, @Model.Email!</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Twoja rola:</strong> <span class="badge bg-secondary">@Model.Role</span></p>
+
+            <hr />
+
+            @if (Model.Role == "Admin")
+            {
+                <h5>Panel administratora</h5>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item"><a asp-page="/Customers/Create" class="btn btn-outline-primary w-100">Dodaj klienta</a></li>
+                    <li class="list-group-item"><a asp-page="/Customers/Edit" class="btn btn-outline-primary w-100">Edytuj klienta</a></li>
+                    <li class="list-group-item"><a asp-page="/Customers/Index" class="btn btn-outline-primary w-100">Lista klientów</a></li>
+                    <li class="list-group-item"><a asp-page="/ManageRoles" class="btn btn-outline-primary w-100">Zarządzaj rolami użytkowników</a></li>
+                    <li class="list-group-item"><a asp-page="/Vehicles/Index" class="btn btn-outline-primary w-100">Zarządzaj pojazdami</a></li>
+                    <li class="list-group-item"><a asp-page="/Comments/Index" class="btn btn-outline-info w-100">Zarządzaj komentarzami</a></li>
+                    <li class="list-group-item"><a asp-page="/Tasks/Index" class="btn btn-outline-primary w-100">Zarządzaj czynnościami</a></li>
+                    <li class="list-group-item"><a asp-page="/Order/Create" class="btn btn-outline-primary w-100">Zarządzaj zleceniami</a></li>
+                    <li class="list-group-item"><a asp-page="/Order/ChangeStatus" class="btn btn-outline-primary w-100">Zmien status zlecenia</a></li>
+                    <li class="list-group-item"><a asp-page="/Order/List" class="btn btn-outline-primary w-100">Sprawdz Zlecenia</a></li>
+                    <li class="list-group-item"><a asp-page="/Tasks/AssignTask" class="btn btn-outline-primary w-100">Sprawdz Zlecenia</a></li>
+
+
+
+                </ul>
+            }
+            else if (Model.Role == "Recepcjonista")
+            {
+                <h5>Panel recepcjonisty</h5>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item"><a asp-page="/Customers/Create" class="btn btn-outline-success w-100">Dodaj klienta</a></li>
+                    <li class="list-group-item"><a asp-page="/Customers/Edit" class="btn btn-outline-success w-100">Edytuj klienta</a></li>
+                    <li class="list-group-item"><a asp-page="/Customers/Index" class="btn btn-outline-success w-100">Lista klientów</a></li>
+                </ul>
+            }
+            else if (Model.Role == "Mechanik")
+            {
+                <h5>Panel mechanika</h5>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item"><a asp-page="/Vehicles/Index" class="btn btn-outline-warning w-100">Zarządzaj pojazdami</a></li>
+                </ul>
+            }
+            else
+            {
+                <p>Brak przypisanej roli lub dostęp ograniczony.</p>
+            }
+
+            <form method="post" asp-page="/Account/Logout" class="mt-3">
+                <button type="submit" class="btn btn-danger">Wyloguj się</button>
+            </form>
+        </div>
+    </div>
+</div>

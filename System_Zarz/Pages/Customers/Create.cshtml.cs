@@ -6,7 +6,7 @@ using System_Zarz.Models;
 
 namespace System_Zarz.Pages.Customers;
 
-[Authorize(Roles = "Admin")]
+[Authorize(Roles = "Admin,Recepcjonista")]
 public class CreateModel : PageModel
 {
     private readonly ApplicationDbContext _context;

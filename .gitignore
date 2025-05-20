@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/System_Zarz/.vs/System_Zarz/FileContentIndex/817317a5-cc52-45b2-82ad-04b5153f9cb8.vsidx
+/System_Zarz/.vs/System_Zarz/FileContentIndex/c28754ad-f7f2-4f30-970b-05ed7a825403.vsidx
+/System_Zarz/obj/Debug/net8.0/staticwebassets.removed.txt
+/System_Zarz/obj/Debug/net8.0/System_Zarz.AssemblyInfo.cs
+/System_Zarz/obj/Debug/net8.0/System_Zarz.AssemblyInfoInputs.cache
+/System_Zarz/obj/Debug/net8.0/System_Zarz.assets.cache
+/System_Zarz/obj/Debug/net8.0/System_Zarz.csproj.AssemblyReference.cache
+/System_Zarz/obj/Debug/net8.0/System_Zarz.GeneratedMSBuildEditorConfig.editorconfig
+/System_Zarz/obj/project.assets.json
+/System_Zarz/obj/project.nuget.cache
+/System_Zarz/obj/System_Zarz.csproj.nuget.dgspec.json
+/System_Zarz/obj/System_Zarz.csproj.nuget.g.props

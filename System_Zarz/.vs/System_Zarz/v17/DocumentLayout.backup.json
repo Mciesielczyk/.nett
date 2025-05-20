@@ -1,0 +1,840 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\customers\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\customers\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\customers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\customers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\data\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:data\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\data\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:data\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\data\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:data\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\data\\ordermechanic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:data\\ordermechanic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\data\\part.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:data\\part.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\data\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:data\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\data\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:data\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\migrations\\20250501155538_initialcreate1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:migrations\\20250501155538_initialcreate1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\migrations\\20250515115437_initialidentitysetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:migrations\\20250515115437_initialidentitysetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\migrations\\20250515115654_initialclean.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:migrations\\20250515115654_initialclean.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\migrations\\20250515141926_addextendedmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:migrations\\20250515141926_addextendedmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\migrations\\20250519091816_addorderdescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:migrations\\20250519091816_addorderdescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\migrations\\20250519093131_addvehiclefields.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:migrations\\20250519093131_addvehiclefields.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\models\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:models\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\models\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:models\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\myproject.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:myproject.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\comments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\comments\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\customers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\customers\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\customers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\customers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\order\\changestatus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\order\\changestatus.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\order\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\order\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\order\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\order\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\tasks\\assigntask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\tasks\\assigntask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\tasks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\tasks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\vehicles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\vehicles\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\vehicles\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\vehicles\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\vehicles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\vehicles\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\vehicles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\vehicles\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|c:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\system_zarz\\pages\\manageroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C4BCC2B-F202-4230-88E7-047B67EA8520}|System_Zarz.csproj|solutionrelative:pages\\manageroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 650,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Customers\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Customers\\Create.cshtml.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Customers\\Create.cshtml.cs",
+              "RelativeToolTip": "Pages\\Customers\\Create.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:10:05.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:01:40.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Comment.cs",
+              "RelativeDocumentMoniker": "Data\\Comment.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Comment.cs",
+              "RelativeToolTip": "Data\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:01:34.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Part.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Part.cs",
+              "RelativeDocumentMoniker": "Data\\Part.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Part.cs",
+              "RelativeToolTip": "Data\\Part.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:01:25.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Task.cs",
+              "RelativeDocumentMoniker": "Data\\Task.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Task.cs",
+              "RelativeToolTip": "Data\\Task.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:01:23.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Vehicle.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Vehicle.cs",
+              "RelativeDocumentMoniker": "Data\\Vehicle.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Vehicle.cs",
+              "RelativeToolTip": "Data\\Vehicle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T17:01:21.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CustomersController.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "Controllers\\CustomersController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowAwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:56:10.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Home\\Index.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Home\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:18.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Customers\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Customers\\Index.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Customers\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Customers\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:32:56.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Customers\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Customers\\Edit.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Customers\\Edit.cshtml",
+              "RelativeToolTip": "Pages\\Customers\\Edit.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAD4vywAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:32:55.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Vehicles\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Vehicles\\Delete.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Vehicles\\Delete.cshtml",
+              "RelativeToolTip": "Pages\\Vehicles\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:32:36.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Vehicles\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Vehicles\\Edit.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Vehicles\\Edit.cshtml",
+              "RelativeToolTip": "Pages\\Vehicles\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:32:35.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Vehicles\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Vehicles\\Index.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Vehicles\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Vehicles\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:32:32.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Vehicles\\Create.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Vehicles\\Create.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Vehicles\\Create.cshtml",
+              "RelativeToolTip": "Pages\\Vehicles\\Create.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAD4vyEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:32.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Tasks\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Tasks\\Index.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Tasks\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Tasks\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAD4vx0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:30.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Pages\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:28.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:27.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:26.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Order\\List.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Order\\List.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Order\\List.cshtml",
+              "RelativeToolTip": "Pages\\Order\\List.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:25.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Order\\Create.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Order\\Create.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Order\\Create.cshtml",
+              "RelativeToolTip": "Pages\\Order\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:24.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ChangeStatus.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Order\\ChangeStatus.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Order\\ChangeStatus.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Order\\ChangeStatus.cshtml",
+              "RelativeToolTip": "Pages\\Order\\ChangeStatus.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:20.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Pages\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:19.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Customers\\Create.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Customers\\Create.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Customers\\Create.cshtml",
+              "RelativeToolTip": "Pages\\Customers\\Create.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwC4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:15.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Comments\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Comments\\Index.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Comments\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Comments\\Index.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAD4vyEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:17:10.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "AssignTask.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Tasks\\AssignTask.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Tasks\\AssignTask.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Tasks\\AssignTask.cshtml",
+              "RelativeToolTip": "Pages\\Tasks\\AssignTask.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:16:06.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAE4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:12:48.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Pages\\_ViewImports.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\_ViewImports.cshtml",
+              "RelativeToolTip": "Pages\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:12:41.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Pages\\_ViewStart.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "Pages\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:12:41.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Index.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:12:39.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ManageRoles.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\ManageRoles.cshtml",
+              "RelativeDocumentMoniker": "Pages\\ManageRoles.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\ManageRoles.cshtml",
+              "RelativeToolTip": "Pages\\ManageRoles.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:12:39.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:12:27.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ApplicationDbContextFactory.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Models\\ApplicationDbContextFactory.cs",
+              "RelativeDocumentMoniker": "Models\\ApplicationDbContextFactory.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Models\\ApplicationDbContextFactory.cs",
+              "RelativeToolTip": "Models\\ApplicationDbContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:12:26.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Models\\DbContext.cs",
+              "RelativeDocumentMoniker": "Models\\DbContext.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Models\\DbContext.cs",
+              "RelativeToolTip": "Models\\DbContext.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAD4v1YAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:12:21.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OrderMechanic.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\OrderMechanic.cs",
+              "RelativeDocumentMoniker": "Data\\OrderMechanic.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\OrderMechanic.cs",
+              "RelativeToolTip": "Data\\OrderMechanic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:12:08.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Order.cs",
+              "RelativeDocumentMoniker": "Data\\Order.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Order.cs",
+              "RelativeToolTip": "Data\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:12:06.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Customer.cs",
+              "RelativeDocumentMoniker": "Data\\Customer.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Data\\Customer.cs",
+              "RelativeToolTip": "Data\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:12:05.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:11:55.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Account\\Profile.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Account\\Profile.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Account\\Profile.cshtml",
+              "RelativeToolTip": "Pages\\Account\\Profile.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:11:54.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Logout.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Account\\Logout.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Account\\Logout.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Account\\Logout.cshtml",
+              "RelativeToolTip": "Pages\\Account\\Logout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:11:53.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "Pages\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-20T16:11:50.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20250501155538_InitialCreate1.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250501155538_InitialCreate1.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250501155538_InitialCreate1.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250501155538_InitialCreate1.cs",
+              "RelativeToolTip": "Migrations\\20250501155538_InitialCreate1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:11:45.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20250515115437_InitialIdentitySetup.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250515115437_InitialIdentitySetup.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250515115437_InitialIdentitySetup.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250515115437_InitialIdentitySetup.cs",
+              "RelativeToolTip": "Migrations\\20250515115437_InitialIdentitySetup.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAD4v1UAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:11:34.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20250515115654_InitialClean.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250515115654_InitialClean.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250515115654_InitialClean.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250515115654_InitialClean.cs",
+              "RelativeToolTip": "Migrations\\20250515115654_InitialClean.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:11:34.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20250515141926_AddExtendedModels.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250515141926_AddExtendedModels.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250515141926_AddExtendedModels.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250515141926_AddExtendedModels.cs",
+              "RelativeToolTip": "Migrations\\20250515141926_AddExtendedModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:11:21.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20250519091816_AddOrderDescription.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250519091816_AddOrderDescription.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250519091816_AddOrderDescription.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250519091816_AddOrderDescription.cs",
+              "RelativeToolTip": "Migrations\\20250519091816_AddOrderDescription.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:11:18.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "20250519093131_AddVehicleFields.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250519093131_AddVehicleFields.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250519093131_AddVehicleFields.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\20250519093131_AddVehicleFields.cs",
+              "RelativeToolTip": "Migrations\\20250519093131_AddVehicleFields.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:11:14.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:10:52.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\MyProject.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "MyProject.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\dev\\nauka\\.net\\projekt z michalem\\.nett\\System_Zarz\\MyProject.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "MyProject.Tests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T16:01:31.673Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

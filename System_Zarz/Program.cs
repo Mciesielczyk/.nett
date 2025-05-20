@@ -44,8 +44,10 @@ using (var scope = app.Services.CreateScope())
         }
     }
 
+
     var adminEmail = "admin@pl";
     var adminPassword = "Admin123!";
+
 
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
     if (adminUser == null)

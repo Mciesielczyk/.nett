@@ -8,7 +8,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace System_Zarz.Pages.Customers;
 
-[Authorize(Roles = "Admin,Recepcjionista")]
+[Authorize(Roles = "Admin,Recepcjonista")]
 
 public class EditModel : PageModel
 {

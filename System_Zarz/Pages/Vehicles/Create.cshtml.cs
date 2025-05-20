@@ -15,7 +15,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace System_Zarz.Pages.Vehicles
 {
-    [Authorize(Roles = "Admin,Mechanik")]
+    [Authorize(Roles = "Admin,Mechanik,Recepcjonista")]
     public class CreateModel : PageModel
     {
         private readonly ApplicationDbContext _context;
@@ -30,8 +30,10 @@ namespace System_Zarz.Pages.Vehicles
         [BindProperty]
         public Vehicle Vehicle { get; set; }
 
+
+        //Opcjonalne pole 
         [BindProperty]
-        public IFormFile UploadPhoto { get; set; }
+        public IFormFile? UploadPhoto { get; set; }
 
         public SelectList CustomersList { get; set; }
 

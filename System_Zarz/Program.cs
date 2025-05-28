@@ -10,7 +10,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+        sqlServerOptionsAction: sqlOptions =>
+        {
+            sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 5,
+                maxRetryDelay: TimeSpan.FromSeconds(30),
+                errorNumbersToAdd: null);
+        }));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -22,10 +29,32 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Account/AccessDenied";
 });
 
+// Dodaj HttpClient dla API
+builder.Services.AddHttpClient("API", client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["ApiSettings:BaseUrl"] ?? "https://localhost:7001/");
+});
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
+// Zastosuj migracje i utwórz bazę danych
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<ApplicationDbContext>();
+        context.Database.Migrate();
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Wystąpił błąd podczas migracji bazy danych.");
+    }
+}
 
 // Tworzenie ról i admina w scope
 using (var scope = app.Services.CreateScope())
@@ -35,7 +64,6 @@ using (var scope = app.Services.CreateScope())
 
     string[] roles = new[] { "Admin", "User", "Recepcjonista", "Mechanik" };
 
-
     foreach (var role in roles)
     {
         if (!await roleManager.RoleExistsAsync(role))
@@ -44,10 +72,8 @@ using (var scope = app.Services.CreateScope())
         }
     }
 
-
     var adminEmail = "admin@pl";
     var adminPassword = "Admin123!";
-
 
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
     if (adminUser == null)

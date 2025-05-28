@@ -18,9 +18,17 @@
             {
                 <h5>Panel administratora</h5>
                 <ul class="list-group list-group-flush mb-3">
-                    <li class="list-group-item"><a asp-page="/Customers/Create" class="btn btn-outline-primary w-100">Dodaj klienta</a></li>
-                    <li class="list-group-item"><a asp-page="/Customers/Edit" class="btn btn-outline-primary w-100">Edytuj klienta</a></li>
-                    <li class="list-group-item"><a asp-page="/Customers/Index" class="btn btn-outline-primary w-100">Lista klientów</a></li>
+                    <li class="list-group-item">
+                        <a asp-controller="Customers" asp-action="Create" class="btn btn-outline-primary w-100">Dodaj klienta</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a asp-controller="Customers" asp-action="Edit" class="btn btn-outline-primary w-100">Edytuj klienta</a>
+                    </li>
+
+                    <li class="list-group-item">
+                        <a asp-controller="Customers" asp-action="Index" class="btn btn-outline-primary w-100">Lista klientów</a>
+                    </li>
+
                     <li class="list-group-item"><a asp-page="/ManageRoles" class="btn btn-outline-primary w-100">Zarządzaj rolami użytkowników</a></li>
                     <li class="list-group-item"><a asp-page="/Vehicles/Index" class="btn btn-outline-primary w-100">Zarządzaj pojazdami</a></li>
                     <li class="list-group-item"><a asp-page="/Comments/Index" class="btn btn-outline-info w-100">Zarządzaj komentarzami</a></li>

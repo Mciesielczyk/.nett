@@ -67,6 +67,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 
 // Zastosuj migracje i utwórz bazę danych
 using (var scope = app.Services.CreateScope())

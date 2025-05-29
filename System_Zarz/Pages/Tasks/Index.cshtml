@@ -17,7 +17,22 @@
         <input asp-for="NewTask.LaborCost" type="number" step="0.01" min="0" class="form-control" />
         <span asp-validation-for="NewTask.LaborCost" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Dodaj czynność</button>
+
+    <div class="mb-3">
+        <label for="SelectedPartId" class="form-label">Wybierz część</label>
+        <select asp-for="SelectedPartId" class="form-select" asp-items="@(new SelectList(Model.PartsList, "Id", "Name"))">
+            <option value="">-- wybierz część --</option>
+        </select>
+        <span asp-validation-for="SelectedPartId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PartQuantity" class="form-label">Ilość części</label>
+        <input asp-for="PartQuantity" type="number" min="1" class="form-control" />
+        <span asp-validation-for="PartQuantity" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Dodaj czynność z częścią</button>
 </form>
 
 <hr />
@@ -31,14 +46,42 @@
         <tr>
             <th>Opis</th>
             <th>Koszt robocizny</th>
+            <th>Części</th>
+            <th>Ilość części</th>
+            <th>Łączny koszt części</th>
+            <th>Razem (robocizna + części)</th>
         </tr>
         </thead>
         <tbody>
         @foreach (var task in Model.TasksList)
         {
+            var parts = task.TaskParts.Select(tp => new
+            {
+                Part = tp.Part,
+                Quantity = tp.Quantity
+            }).ToList();
+
+
+            decimal partsCost = parts.Sum(p => p.Part.Price * p.Quantity);
+            decimal totalCost = task.LaborCost + partsCost;
+
             <tr>
                 <td>@task.Description</td>
                 <td>@task.LaborCost.ToString("C")</td>
+                <td>
+                    @foreach(var p in parts)
+                    {
+                        <div>@p.Part.Name</div>
+                    }
+                </td>
+                <td>
+                    @foreach(var p in parts)
+                    {
+                        <div>@p.Quantity</div>
+                    }
+                </td>
+                <td>@partsCost.ToString("C")</td>
+                <td>@totalCost.ToString("C")</td>
             </tr>
         }
         </tbody>

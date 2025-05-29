@@ -23,4 +23,7 @@ public class Order
     public List<OrderTask> Tasks { get; set; } = new();
     public List<Comment> Comments { get; set; } = new();
     public List<OrderPart> Parts { get; set; } = new();
+    
+    public List<OrderTask> OrderTasks { get; set; } = new();
+    public List<OrderPart> OrderParts { get; set; } = new();
 }

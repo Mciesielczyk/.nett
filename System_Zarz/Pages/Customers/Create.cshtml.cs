@@ -1,19 +1,25 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
 using System_Zarz.Data;
 using System_Zarz.Models;
+using Task = System.Threading.Tasks.Task;
 
 namespace System_Zarz.Pages.Customers;
 
 [Authorize(Roles = "Admin,Recepcjonista")]
 public class CreateModel : PageModel
 {
-    private readonly ApplicationDbContext _context;
+    private readonly IHttpClientFactory _clientFactory;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public CreateModel(ApplicationDbContext context)
+    public CreateModel(IHttpClientFactory clientFactory, IHttpContextAccessor httpContextAccessor)
     {
-        _context = context;
+        _clientFactory = clientFactory;
+        _httpContextAccessor = httpContextAccessor;
     }
 
     [BindProperty]
@@ -34,18 +40,34 @@ public class CreateModel : PageModel
             return Page();
         }
 
-        try
-        {
-            _context.Customers.Add(Customer);
-            await _context.SaveChangesAsync();
+        var client = _clientFactory.CreateClient("API");
+        var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
 
+        var json = JsonSerializer.Serialize(Customer);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var request = new HttpRequestMessage(HttpMethod.Post, "api/CustomersApi");
+        request.Content = content;
+
+        if (!string.IsNullOrEmpty(cookie))
+        {
+            request.Headers.Add("Cookie", cookie);
+        }
+
+        var response = await client.SendAsync(request);
+
+        if (response.IsSuccessStatusCode)
+        {
             SuccessMessage = true;
             ModelState.Clear();
-            Customer = new();
+            Customer = new Customer();
+            ErrorMessage = null;
         }
-        catch (Exception ex)
+        else
         {
-            ErrorMessage = $"❌ Wystąpił błąd przy zapisie: {ex.Message}";
+            var errorMsg = await response.Content.ReadAsStringAsync();
+            ErrorMessage = $"❌ Błąd zapisu: {response.StatusCode} - {errorMsg}";
+            SuccessMessage = false;
         }
 
         return Page();

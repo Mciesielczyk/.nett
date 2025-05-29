@@ -20,72 +20,98 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     public DbSet<OrderMechanic> OrderMechanics { get; set; }
     public DbSet<OrderTask> OrderTasks { get; set; }
     public DbSet<OrderPart> OrderParts { get; set; }
+    public DbSet<TaskPart> TaskParts { get; set; }
+    public DbSet <SparePart> SparePart { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
 
-        // Kaskadowe usuwanie powiązań w relacjach wiele do wielu
+        // OrderMechanic - klucz złożony i relacje
         builder.Entity<OrderMechanic>()
             .HasKey(om => new { om.OrderId, om.MechanicId });
+
         builder.Entity<OrderMechanic>()
             .HasOne(om => om.Order)
             .WithMany(o => o.Mechanics)
             .HasForeignKey(om => om.OrderId)
-            .OnDelete(DeleteBehavior.Cascade); // kaskada
+            .OnDelete(DeleteBehavior.Cascade);
+
         builder.Entity<OrderMechanic>()
             .HasOne(om => om.Mechanic)
             .WithMany()
             .HasForeignKey(om => om.MechanicId)
-            .OnDelete(DeleteBehavior.Cascade); // możesz zmienić jeśli chcesz inny efekt
+            .OnDelete(DeleteBehavior.Cascade);
 
+        // OrderTask - klucz złożony i relacje
         builder.Entity<OrderTask>()
             .HasKey(ot => new { ot.OrderId, ot.TaskId });
+
         builder.Entity<OrderTask>()
             .HasOne(ot => ot.Order)
             .WithMany(o => o.Tasks)
             .HasForeignKey(ot => ot.OrderId)
-            .OnDelete(DeleteBehavior.Cascade); // kaskada
+            .OnDelete(DeleteBehavior.Cascade);
+
         builder.Entity<OrderTask>()
             .HasOne(ot => ot.Task)
             .WithMany(t => t.OrderTasks)
             .HasForeignKey(ot => ot.TaskId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        // OrderPart - klucz złożony i relacje
         builder.Entity<OrderPart>()
             .HasKey(op => new { op.OrderId, op.PartId });
+
         builder.Entity<OrderPart>()
             .HasOne(op => op.Order)
             .WithMany(o => o.Parts)
             .HasForeignKey(op => op.OrderId)
-            .OnDelete(DeleteBehavior.Cascade); // kaskada
+            .OnDelete(DeleteBehavior.Cascade);
+
         builder.Entity<OrderPart>()
             .HasOne(op => op.Part)
             .WithMany(p => p.OrderParts)
             .HasForeignKey(op => op.PartId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        // Przykład: usuwanie klienta usuwa pojazdy
+        // TaskPart - klucz złożony i relacje (Twoja nowa tabela dla części przypisanych do czynności)
+        builder.Entity<TaskPart>()
+            .HasKey(tp => new { tp.TaskId, tp.PartId });
+
+        builder.Entity<TaskPart>()
+            .HasOne(tp => tp.Task)
+            .WithMany(t => t.TaskParts)
+            .HasForeignKey(tp => tp.TaskId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.Entity<TaskPart>()
+            .HasOne(tp => tp.Part)
+            .WithMany(p => p.TaskParts)
+            .HasForeignKey(tp => tp.PartId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // Relacje Vehicle - Customer
         builder.Entity<Vehicle>()
             .HasOne(v => v.Customer)
             .WithMany(c => c.Vehicles)
             .HasForeignKey(v => v.CustomerId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        // Usuwanie pojazdu usuwa zlecenia
+        // Relacje Order - Vehicle
         builder.Entity<Order>()
             .HasOne(o => o.Vehicle)
             .WithMany(v => v.Orders)
             .HasForeignKey(o => o.VehicleId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        // Komentarze powiązane ze zleceniem - kaskada
+        // Komentarze - relacja Order - Comment
         builder.Entity<Comment>()
             .HasOne(c => c.Order)
             .WithMany(o => o.Comments)
             .HasForeignKey(c => c.OrderId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        // Czynności (Task) i części (Part) same nie są usuwane, bo mogą być używane w innych zleceniach
+        // Task i Part nie są usuwane kaskadowo, bo mogą być współdzielone
     }
 }

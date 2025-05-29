@@ -36,6 +36,8 @@ namespace System_Zarz.Pages.Vehicles
         public IFormFile? UploadPhoto { get; set; }
 
         public SelectList CustomersList { get; set; }
+        public bool SuccessMessage { get; set; }
+        public string? ErrorMessage { get; set; }
 
         public async Task OnGetAsync()
         {

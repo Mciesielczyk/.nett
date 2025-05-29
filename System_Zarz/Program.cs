@@ -3,11 +3,26 @@ using Microsoft.EntityFrameworkCore;
 using System_Zarz.Data;
 using Task = System.Threading.Tasks.Task; 
 
+
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient(); // ← bez tego nie zadziała HttpClientFactory
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:5264", "http://localhost:5264")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials();
+        });
+});
 
 // Dodaj usługi
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -32,7 +47,20 @@ builder.Services.ConfigureApplicationCookie(options =>
 // Dodaj HttpClient dla API
 builder.Services.AddHttpClient("API", client =>
 {
-    client.BaseAddress = new Uri(builder.Configuration["ApiSettings:BaseUrl"] ?? "https://localhost:7001/");
+    client.BaseAddress = new Uri(builder.Configuration["ApiSettings:BaseUrl"] ?? "http://localhost:7236/");
+});
+builder.Services.AddHttpClient("API")
+    .ConfigurePrimaryHttpMessageHandler(() =>
+    {
+        return new HttpClientHandler
+        {
+            UseCookies = true
+        };
+    });
+
+builder.Services.AddControllers().AddJsonOptions(x =>
+{
+    x.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
 });
 
 builder.Services.AddControllersWithViews();
@@ -72,7 +100,7 @@ using (var scope = app.Services.CreateScope())
         }
     }
 
-    var adminEmail = "admin@pl";
+    var adminEmail = "admin@1";
     var adminPassword = "Admin123!";
 
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
@@ -127,6 +155,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseCors("AllowAll");
 
 app.MapRazorPages();
 app.MapGet("/", context =>

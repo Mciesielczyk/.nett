@@ -26,8 +26,9 @@
                     </li>
 
                     <li class="list-group-item">
-                        <a asp-controller="Customers" asp-action="Index" class="btn btn-outline-primary w-100">Lista klientów</a>
+                        <a asp-page="/Customers/Index" class="btn btn-outline-primary w-100">Lista klientów</a>
                     </li>
+
 
                     <li class="list-group-item"><a asp-page="/ManageRoles" class="btn btn-outline-primary w-100">Zarządzaj rolami użytkowników</a></li>
                     <li class="list-group-item"><a asp-page="/Vehicles/Index" class="btn btn-outline-primary w-100">Zarządzaj pojazdami</a></li>
@@ -36,8 +37,15 @@
                     <li class="list-group-item"><a asp-page="/Order/Create" class="btn btn-outline-primary w-100">Zarządzaj zleceniami</a></li>
                     <li class="list-group-item"><a asp-page="/Order/ChangeStatus" class="btn btn-outline-primary w-100">Zmien status zlecenia</a></li>
                     <li class="list-group-item"><a asp-page="/Order/List" class="btn btn-outline-primary w-100">Sprawdz Zlecenia</a></li>
-                    <li class="list-group-item"><a asp-page="/Tasks/AssignTask" class="btn btn-outline-primary w-100">Sprawdz Zlecenia</a></li>
+                    <li class="list-group-item"><a asp-page="/Tasks/AssignTask" class="btn btn-outline-primary w-100">Przypisz czynności do zlecenia</a></li>
 
+                    <li class="list-group-item">
+                        <a asp-page="/Comments/Index" class="btn btn-outline-primary w-100">Komentarze</a>
+                    </li>
+
+                    <li class="list-group-item">
+                        <a asp-page="/SpareParts" class="btn btn-outline-primary w-100">Zarzadzanie częściami zamiennymi</a>
+                    </li>
 
 
                 </ul>

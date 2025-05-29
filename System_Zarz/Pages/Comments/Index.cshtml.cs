@@ -1,83 +1,191 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
 using System_Zarz.Data;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using System.Linq;
 using Task = System.Threading.Tasks.Task;
 
-namespace System_Zarz.Pages.Comments;
-
-[Authorize(Roles = "Admin,Recepcjonista")]
-public class IndexModel : PageModel
+namespace System_Zarz.Pages.Comments
 {
-    private readonly ApplicationDbContext _context;
-    private readonly UserManager<IdentityUser> _userManager;
-    [TempData]
-    public string? StatusMessage { get; set; }
-
-    [TempData]
-    public string? ErrorMessage { get; set; }
-
-    public IndexModel(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+    [Authorize] // dostęp tylko dla zalogowanych
+    public class IndexModel : PageModel
     {
-        _context = context;
-        _userManager = userManager;
-    }
+        private readonly IHttpClientFactory _clientFactory;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public List<Comment> Comments { get; set; } = new();
-
-    [BindProperty]
-    public Comment NewComment { get; set; } = new();
-
-    public async Task OnGetAsync()
-    {
-        await LoadCommentsAsync();
-    }
-
-    public async Task<IActionResult> OnPostAsync()
-    {
-        var user = await _userManager.GetUserAsync(User);
-        if (user == null)
+        public IndexModel(IHttpClientFactory clientFactory, IHttpContextAccessor httpContextAccessor)
         {
-            ErrorMessage = "Nie znaleziono użytkownika.";
-            await LoadCommentsAsync();
+            _clientFactory = clientFactory;
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        // Lista zleceń do wyboru (ładujemy na GET)
+        public List<OrderDto> OrdersList { get; set; } = new();
+
+        // Wybrane zlecenie
+        [BindProperty]
+        public int SelectedOrderId { get; set; }
+
+        // Komentarze do wybranego zlecenia
+        public List<CommentDto> CommentsList { get; set; } = new();
+
+        // Nowy komentarz do wpisania
+        [BindProperty]
+        public string NewCommentText { get; set; } = string.Empty;
+
+        public string? ErrorMessage { get; set; }
+        public bool SuccessMessage { get; set; } = false;
+
+        // DTO do komentarza
+        public class CommentDto
+        {
+            public int Id { get; set; }
+            public string Text { get; set; } = string.Empty;
+            public string Author { get; set; } = string.Empty;
+            public string CreatedAt { get; set; } = string.Empty; // możesz też DateTime
+            public int OrderId { get; set; }
+        }
+
+        // DTO do zlecenia
+        public class OrderDto
+        {
+            public int Id { get; set; }
+            public string Name { get; set; } = string.Empty;
+        }
+
+        public async Task OnGetAsync()
+        {
+            await LoadOrdersAsync();
+            if (OrdersList.Any())
+            {
+                SelectedOrderId = OrdersList.First().Id;
+                await LoadCommentsAsync(SelectedOrderId);
+            }
+        }
+
+        public async Task<IActionResult> OnPostLoadCommentsAsync()
+        {
+            await LoadOrdersAsync();
+            await LoadCommentsAsync(SelectedOrderId);
             return Page();
         }
 
-        if (!ModelState.IsValid)
+        public async Task<IActionResult> OnPostAddCommentAsync()
         {
-            var errors = ModelState
-                .Where(e => e.Value.Errors.Count > 0)
-                .Select(e => $"{e.Key}: {string.Join(", ", e.Value.Errors.Select(er => er.ErrorMessage))}");
+            if (string.IsNullOrWhiteSpace(NewCommentText))
+            {
+                ErrorMessage = "Komentarz nie może być pusty.";
+                await LoadOrdersAsync();
+                await LoadCommentsAsync(SelectedOrderId);
+                return Page();
+            }
 
-            ErrorMessage = "Formularz zawiera błędy: " + string.Join(" | ", errors);
-            await LoadCommentsAsync();
-            return Page();
+            var client = _clientFactory.CreateClient("API");
+
+            var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
+            var commentCreate = new
+            {
+                OrderId = SelectedOrderId,
+                Text = NewCommentText
+            };
+
+            var json = JsonSerializer.Serialize(commentCreate);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var request = new HttpRequestMessage(HttpMethod.Post, "api/comments")
+            {
+                Content = content
+            };
+
+            if (!string.IsNullOrEmpty(cookie))
+            {
+                request.Headers.Add("Cookie", cookie);
+            }
+
+            var response = await client.SendAsync(request);
+
+            if (response.IsSuccessStatusCode)
+            {
+                SuccessMessage = true;
+                NewCommentText = string.Empty;
+                ErrorMessage = null;
+                await LoadOrdersAsync();
+                await LoadCommentsAsync(SelectedOrderId);
+                ModelState.Clear();
+                return Page();
+            }
+            else
+            {
+                var errorMsg = await response.Content.ReadAsStringAsync();
+                ErrorMessage = $"Błąd dodawania komentarza: {response.StatusCode} - {errorMsg}";
+                SuccessMessage = false;
+                await LoadOrdersAsync();
+                await LoadCommentsAsync(SelectedOrderId);
+                return Page();
+            }
         }
 
+        private async Task LoadOrdersAsync()
+        {
+            var client = _clientFactory.CreateClient("API");
+            var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
 
-        var orderExists = await _context.Orders.AnyAsync(o => o.Id == NewComment.OrderId);
+            var request = new HttpRequestMessage(HttpMethod.Get, "api/orders");
+            if (!string.IsNullOrEmpty(cookie))
+                request.Headers.Add("Cookie", cookie);
 
+            var response = await client.SendAsync(request);
 
-        NewComment.UserId = user.Id;
-        NewComment.CreatedAt = DateTime.Now;
+            if (response.IsSuccessStatusCode)
+            {
+                var stream = await response.Content.ReadAsStreamAsync();
+                var orders = await JsonSerializer.DeserializeAsync<List<OrderDto>>(stream, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+                OrdersList = orders ?? new List<OrderDto>();
+            }
+            else
+            {
+                OrdersList = new List<OrderDto>();
+                ErrorMessage = $"Nie udało się załadować listy zleceń. Status: {response.StatusCode}";
+            }
+        }
 
-        _context.Comments.Add(NewComment);
-        await _context.SaveChangesAsync();
+        private async Task LoadCommentsAsync(int orderId)
+        {
+            var client = _clientFactory.CreateClient("API");
+            var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
 
-        StatusMessage = "Komentarz został dodany pomyślnie.";
-        return RedirectToPage(); // reload z komunikatem
-    }
+            var request = new HttpRequestMessage(HttpMethod.Get, $"api/comments?orderId={orderId}");
+            if (!string.IsNullOrEmpty(cookie))
+            {
+                request.Headers.Add("Cookie", cookie);
+            }
 
+            var response = await client.SendAsync(request);
 
-    private async Task LoadCommentsAsync()
-    {
-        Comments = await _context.Comments
-            .Include(c => c.User)
-            .Include(c => c.Order)
-            .OrderByDescending(c => c.CreatedAt)
-            .ToListAsync();
+            if (response.IsSuccessStatusCode)
+            {
+                var stream = await response.Content.ReadAsStreamAsync();
+                var comments = await JsonSerializer.DeserializeAsync<List<CommentDto>>(stream, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                CommentsList = comments ?? new List<CommentDto>();
+            }
+            else
+            {
+                CommentsList = new List<CommentDto>();
+                ErrorMessage = $"Nie udało się załadować komentarzy. Status: {response.StatusCode}";
+            }
+        }
     }
 }

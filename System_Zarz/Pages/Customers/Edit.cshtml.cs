@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Text.Json;
+using System.Text;
 using System_Zarz.Data;
 using System_Zarz.Models;
 using Task = System.Threading.Tasks.Task;
@@ -9,14 +12,15 @@ using Task = System.Threading.Tasks.Task;
 namespace System_Zarz.Pages.Customers;
 
 [Authorize(Roles = "Admin,Recepcjonista")]
-
 public class EditModel : PageModel
 {
-    private readonly ApplicationDbContext _context;
+    private readonly IHttpClientFactory _clientFactory;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
-    public EditModel(ApplicationDbContext context)
+    public EditModel(IHttpClientFactory clientFactory, IHttpContextAccessor httpContextAccessor)
     {
-        _context = context;
+        _clientFactory = clientFactory;
+        _httpContextAccessor = httpContextAccessor;
     }
 
     [BindProperty]
@@ -30,14 +34,38 @@ public class EditModel : PageModel
 
     public async Task OnGetAsync()
     {
-        AllCustomers = await _context.Customers.ToListAsync();
+        var client = _clientFactory.CreateClient("API");
+
+        // Przekazujemy ciasteczka (auth) z przeglądarki
+        var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
+        var requestAll = new HttpRequestMessage(HttpMethod.Get, "api/CustomersApi");
+        if (!string.IsNullOrEmpty(cookie))
+        {
+            requestAll.Headers.Add("Cookie", cookie);
+        }
+        var responseAll = await client.SendAsync(requestAll);
+        if (responseAll.IsSuccessStatusCode)
+        {
+            var contentAll = await responseAll.Content.ReadAsStringAsync();
+            AllCustomers = JsonSerializer.Deserialize<List<Customer>>(contentAll, new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new();
+        }
+        else
+        {
+            Message = $"❌ Błąd pobierania listy klientów: {responseAll.StatusCode}";
+        }
 
         if (SearchId.HasValue)
         {
-            var customer = await _context.Customers.FindAsync(SearchId.Value);
-            if (customer != null)
+            var request = new HttpRequestMessage(HttpMethod.Get, $"api/CustomersApi/{SearchId.Value}");
+            if (!string.IsNullOrEmpty(cookie))
             {
-                Customer = customer;
+                request.Headers.Add("Cookie", cookie);
+            }
+            var response = await client.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                Customer = JsonSerializer.Deserialize<Customer>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new Customer();
                 Message = null;
             }
             else
@@ -51,26 +79,59 @@ public class EditModel : PageModel
     {
         if (!ModelState.IsValid)
         {
-            AllCustomers = await _context.Customers.ToListAsync();
+            // Reload list on error
+            await LoadAllCustomersAsync();
             return Page();
         }
 
-        var customerToUpdate = await _context.Customers.FindAsync(Customer.Id);
-        if (customerToUpdate == null)
+        var client = _clientFactory.CreateClient("API");
+        var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
+
+        var json = JsonSerializer.Serialize(Customer);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var request = new HttpRequestMessage(HttpMethod.Put, $"api/CustomersApi/{Customer.Id}");
+        request.Content = content;
+        if (!string.IsNullOrEmpty(cookie))
         {
-            Message = "❌ Nie znaleziono klienta do edycji.";
-            AllCustomers = await _context.Customers.ToListAsync();
-            return Page();
+            request.Headers.Add("Cookie", cookie);
         }
 
-        customerToUpdate.FullName = Customer.FullName;
-        customerToUpdate.Email = Customer.Email;
-        customerToUpdate.Phone = Customer.Phone;
+        var response = await client.SendAsync(request);
 
-        await _context.SaveChangesAsync();
-        Message = "✅ Dane klienta zostały zaktualizowane.";
+        if (response.IsSuccessStatusCode || response.StatusCode == System.Net.HttpStatusCode.NoContent)
+        {
+            Message = "✅ Dane klienta zostały zaktualizowane.";
+        }
+        else
+        {
+            var errorMsg = await response.Content.ReadAsStringAsync();
+            Message = $"❌ Błąd aktualizacji: {response.StatusCode} - {errorMsg}";
+        }
 
-        AllCustomers = await _context.Customers.ToListAsync();
+        await LoadAllCustomersAsync();
+
         return Page();
+    }
+
+    private async Task LoadAllCustomersAsync()
+    {
+        var client = _clientFactory.CreateClient("API");
+        var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
+        var request = new HttpRequestMessage(HttpMethod.Get, "api/CustomersApi");
+        if (!string.IsNullOrEmpty(cookie))
+        {
+            request.Headers.Add("Cookie", cookie);
+        }
+        var response = await client.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var content = await response.Content.ReadAsStringAsync();
+            AllCustomers = JsonSerializer.Deserialize<List<Customer>>(content, new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new();
+        }
+        else
+        {
+            AllCustomers = new List<Customer>();
+        }
     }
 }

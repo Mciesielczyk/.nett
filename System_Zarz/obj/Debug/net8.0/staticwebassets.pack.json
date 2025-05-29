@@ -257,12 +257,28 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\0f51bf7f-c0df-4767-a426-e6e13475a67c.png",
+      "PackagePath": "staticwebassets\\uploads\\0f51bf7f-c0df-4767-a426-e6e13475a67c.png"
+    },
+    {
+      "Id": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\152d8d01-f53f-457f-bea6-07407827c78f.png",
+      "PackagePath": "staticwebassets\\uploads\\152d8d01-f53f-457f-bea6-07407827c78f.png"
+    },
+    {
       "Id": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\2326b91a-40bf-41d6-8726-a1cc62149520.png",
       "PackagePath": "staticwebassets\\uploads\\2326b91a-40bf-41d6-8726-a1cc62149520.png"
     },
     {
       "Id": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\3b53b2e3-2f00-49b5-a13d-740ef5dd3b23.png",
       "PackagePath": "staticwebassets\\uploads\\3b53b2e3-2f00-49b5-a13d-740ef5dd3b23.png"
+    },
+    {
+      "Id": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\444e4611-f6c0-4986-9c7f-d3ffb1958f9b.png",
+      "PackagePath": "staticwebassets\\uploads\\444e4611-f6c0-4986-9c7f-d3ffb1958f9b.png"
+    },
+    {
+      "Id": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\6335c3f2-67b3-470a-82ed-e947281767d0.png",
+      "PackagePath": "staticwebassets\\uploads\\6335c3f2-67b3-470a-82ed-e947281767d0.png"
     },
     {
       "Id": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\76c9a047-8c16-4f22-812e-11f35e61013c.png",
@@ -283,6 +299,10 @@
     {
       "Id": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\dde3e75f-c242-4b2a-beab-77e9d111df9d.png",
       "PackagePath": "staticwebassets\\uploads\\dde3e75f-c242-4b2a-beab-77e9d111df9d.png"
+    },
+    {
+      "Id": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\ed3e18e4-d5d6-4571-8331-62a8de1275b3.png",
+      "PackagePath": "staticwebassets\\uploads\\ed3e18e4-d5d6-4571-8331-62a8de1275b3.png"
     },
     {
       "Id": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\ff3604b6-ed20-412a-8afd-dfe6c5116d4c.png",

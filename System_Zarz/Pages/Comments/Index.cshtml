@@ -1,59 +1,71 @@
 ﻿@page
 @model System_Zarz.Pages.Comments.IndexModel
 @{
-    ViewData["Title"] = "Komentarze";
+    ViewData["Title"] = "Komentarze do zleceń";
 }
 
-<div class="container mt-5">
-    <h2>Komentarze do zleceń</h2>
-    @if (!string.IsNullOrEmpty(Model.StatusMessage))
+<h2>Komentarze do zleceń</h2>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+<form method="post" asp-page-handler="LoadComments">
+    <div class="form-group">
+        <label for="SelectedOrderId">Wybierz zlecenie:</label>
+        <select asp-for="SelectedOrderId" asp-items="@(new SelectList(Model.OrdersList, "Id", "Id"))" class="form-control"></select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Pokaż komentarze</button>
+</form>
+
+@if (Model.SelectedOrderId != 0)
+{
+    var selectedOrder = Model.OrdersList.FirstOrDefault(o => o.Id == Model.SelectedOrderId);
+    if (selectedOrder != null)
     {
-        <div class="alert alert-success">@Model.StatusMessage</div>
+        <p class="mt-2"><strong>Wybrane zlecenie:</strong> @selectedOrder.Name (ID: @selectedOrder.Id)</p>
     }
+}
 
-    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
-    {
-        <div class="alert alert-danger">@Model.ErrorMessage</div>
-    }
 
-    <form method="post" class="mb-4">
-        <div class="mb-3">
-            <label asp-for="NewComment.OrderId" class="form-label">ID zlecenia</label>
-            <input asp-for="NewComment.OrderId" class="form-control" />
-            <span asp-validation-for="NewComment.OrderId" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="NewComment.Text" class="form-label">Treść komentarza</label>
-            <textarea asp-for="NewComment.Text" class="form-control"></textarea>
-            <span asp-validation-for="NewComment.Text" class="text-danger"></span>
-        </div>
-        <button type="submit" class="btn btn-success">Dodaj komentarz</button>
-    </form>
+<hr />
 
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Zlecenie</th>
-            <th>Autor</th>
-            <th>Data</th>
-            <th>Treść</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var comment in Model.Comments)
+@if (Model.CommentsList.Any())
+{
+    <h3>Komentarze (zlecenie #@Model.SelectedOrderId)</h3>
+    <ul class="list-group">
+        @foreach (var comment in Model.CommentsList)
         {
-            <tr>
-                <td>@comment.Id</td>
-                <td>Zlecenie #@comment.OrderId</td>
-                <td>@comment.User.Email</td>
-                <td>@comment.CreatedAt.ToString("g")</td>
-                <td>@comment.Text</td>
-            </tr>
+            <li class="list-group-item">
+                <strong>@comment.Author</strong>
+                <small class="text-muted">(@comment.CreatedAt)</small>
+                <p>@comment.Text</p>
+            </li>
         }
-        </tbody>
-    </table>
-</div>
+    </ul>
+}
+else
+{
+    <p>Brak komentarzy dla wybranego zlecenia.</p>
+}
+
+<hr />
+
+<h3>Dodaj nowy komentarz</h3>
+<form method="post" asp-page-handler="AddComment">
+    <input type="hidden" asp-for="SelectedOrderId" />
+    <div class="form-group">
+        <textarea asp-for="NewCommentText" class="form-control" rows="4" placeholder="Napisz komentarz..."></textarea>
+        <span asp-validation-for="NewCommentText" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Dodaj komentarz</button>
+</form>
+
+@if (Model.SuccessMessage)
+{
+    <div class="alert alert-success mt-2">Komentarz został dodany!</div>
+}
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

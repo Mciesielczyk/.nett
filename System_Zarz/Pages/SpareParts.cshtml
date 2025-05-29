@@ -1,0 +1,78 @@
+﻿@page
+@model System_Zarz.Pages.SpareParts.IndexModel
+@{
+    ViewData["Title"] = "Części zamienne - zarządzanie";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+@if (Model.SuccessMessage)
+{
+    <div class="alert alert-success">Operacja zakończona sukcesem.</div>
+}
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Nazwa</th>
+        <th>Typ</th>
+        <th>Cena jednostkowa</th>
+        <th>Akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var part in Model.SparePartsList)
+    {
+        <tr>
+            <td>@part.Name</td>
+            <td>@part.Type</td>
+            <td>@part.UnitPrice.ToString("C")</td>
+            <td>
+                <form method="post" asp-page-handler="Edit" asp-route-id="@part.Id" style="display:inline">
+                    <button class="btn btn-warning btn-sm" type="submit">Edytuj</button>
+                </form>
+                <form method="post" asp-page-handler="Delete" asp-route-id="@part.Id" style="display:inline"
+                      onsubmit="return confirm('Czy na pewno chcesz usunąć tę część?');">
+                    <button class="btn btn-danger btn-sm" type="submit">Usuń</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<hr />
+
+<h3>@(Model.IsEditing ? "Edytuj część" : "Dodaj nową część")</h3>
+
+<form method="post" asp-page-handler="@(Model.IsEditing ? "Update" : "Create")">
+    <input type="hidden" asp-for="InputPart.Id" />
+    <div class="form-group">
+        <label asp-for="InputPart.Name"></label>
+        <input asp-for="InputPart.Name" class="form-control" />
+        <span asp-validation-for="InputPart.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InputPart.Type"></label>
+        <input asp-for="InputPart.Type" class="form-control" />
+        <span asp-validation-for="InputPart.Type" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InputPart.UnitPrice"></label>
+        <input asp-for="InputPart.UnitPrice" class="form-control" />
+        <span asp-validation-for="InputPart.UnitPrice" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">@(Model.IsEditing ? "Aktualizuj" : "Dodaj")</button>
+    @if (Model.IsEditing)
+    {
+        <button type="submit" asp-page-handler="Cancel" class="btn btn-secondary mt-2">Anuluj</button>
+    }
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

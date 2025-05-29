@@ -5,7 +5,8 @@ public class Part
     public int Id { get; set; }
     public string Name { get; set; } = null!;
     public decimal Price { get; set; }
-    
+    public List<TaskPart> TaskParts { get; set; } = new(); // dodaj nawigację do relacji z Task
+
     public List<OrderPart> OrderParts { get; set; } = new();
 }
 

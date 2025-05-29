@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d/1D55WVRtBaVkbPJPxSm6XjRQWsW8vX/8JncqrOcgY=",
+  "Hash": "TwCOQ6Q1DyjGVBUoDeN6RKyW26P6gzsDK2KJsxOO93k=",
   "Source": "System_Zarz",
   "BasePath": "_content/System_Zarz",
   "Mode": "Default",
@@ -1382,6 +1382,48 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\0f51bf7f-c0df-4767-a426-e6e13475a67c.png",
+      "SourceId": "System_Zarz",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\",
+      "BasePath": "_content/System_Zarz",
+      "RelativePath": "uploads/0f51bf7f-c0df-4767-a426-e6e13475a67c#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "52kiw9qajz",
+      "Integrity": "DTrGXIeASkloe9MBbuflUbWYBBrW75zJ+9o8HnrUWL0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\0f51bf7f-c0df-4767-a426-e6e13475a67c.png"
+    },
+    {
+      "Identity": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\152d8d01-f53f-457f-bea6-07407827c78f.png",
+      "SourceId": "System_Zarz",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\",
+      "BasePath": "_content/System_Zarz",
+      "RelativePath": "uploads/152d8d01-f53f-457f-bea6-07407827c78f#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wh6afxjy2q",
+      "Integrity": "ZIKj6KJDGUNqBkaTSy9xtdwl9WDwItBOeIgGhgsmcrE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\152d8d01-f53f-457f-bea6-07407827c78f.png"
+    },
+    {
       "Identity": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\2326b91a-40bf-41d6-8726-a1cc62149520.png",
       "SourceId": "System_Zarz",
       "SourceType": "Discovered",
@@ -1422,6 +1464,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\3b53b2e3-2f00-49b5-a13d-740ef5dd3b23.png"
+    },
+    {
+      "Identity": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\444e4611-f6c0-4986-9c7f-d3ffb1958f9b.png",
+      "SourceId": "System_Zarz",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\",
+      "BasePath": "_content/System_Zarz",
+      "RelativePath": "uploads/444e4611-f6c0-4986-9c7f-d3ffb1958f9b#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "r6gficqdl3",
+      "Integrity": "TR5mR+O1lIeMAUIuLeTHfWFCZqA3N2FCWCN8QCdlRPQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\444e4611-f6c0-4986-9c7f-d3ffb1958f9b.png"
+    },
+    {
+      "Identity": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\6335c3f2-67b3-470a-82ed-e947281767d0.png",
+      "SourceId": "System_Zarz",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\",
+      "BasePath": "_content/System_Zarz",
+      "RelativePath": "uploads/6335c3f2-67b3-470a-82ed-e947281767d0#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dyirxk0hx5",
+      "Integrity": "S5YCoK1/W8+AMqXPS78SsJ6RGvAn8++qcK4qmgDlqUw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\6335c3f2-67b3-470a-82ed-e947281767d0.png"
     },
     {
       "Identity": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\76c9a047-8c16-4f22-812e-11f35e61013c.png",
@@ -1527,6 +1611,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\dde3e75f-c242-4b2a-beab-77e9d111df9d.png"
+    },
+    {
+      "Identity": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\ed3e18e4-d5d6-4571-8331-62a8de1275b3.png",
+      "SourceId": "System_Zarz",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\",
+      "BasePath": "_content/System_Zarz",
+      "RelativePath": "uploads/ed3e18e4-d5d6-4571-8331-62a8de1275b3#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "02vu0uwyeo",
+      "Integrity": "SE/G+wfcu5aOr+Oa80xCZhmSHRkVf/7GgQ0fdztFnSE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\ed3e18e4-d5d6-4571-8331-62a8de1275b3.png"
     },
     {
       "Identity": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\ff3604b6-ed20-412a-8afd-dfe6c5116d4c.png",
@@ -6740,7 +6845,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 18:50:48 GMT"
+          "Value": "Thu, 29 May 2025 08:25:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6785,7 +6890,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 18:50:48 GMT"
+          "Value": "Thu, 29 May 2025 08:25:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6830,7 +6935,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 18:50:48 GMT"
+          "Value": "Thu, 29 May 2025 08:25:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6867,7 +6972,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 28 May 2025 18:50:48 GMT"
+          "Value": "Thu, 29 May 2025 08:25:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6878,6 +6983,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-R00KX4/QriWQAc5hrfwSyBURMDjwCQdDD+YVUK0uFvw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/0f51bf7f-c0df-4767-a426-e6e13475a67c.52kiw9qajz.png",
+      "AssetFile": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\0f51bf7f-c0df-4767-a426-e6e13475a67c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DTrGXIeASkloe9MBbuflUbWYBBrW75zJ+9o8HnrUWL0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 10:32:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "52kiw9qajz"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/0f51bf7f-c0df-4767-a426-e6e13475a67c.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DTrGXIeASkloe9MBbuflUbWYBBrW75zJ+9o8HnrUWL0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/0f51bf7f-c0df-4767-a426-e6e13475a67c.png",
+      "AssetFile": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\0f51bf7f-c0df-4767-a426-e6e13475a67c.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43003"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DTrGXIeASkloe9MBbuflUbWYBBrW75zJ+9o8HnrUWL0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 10:32:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DTrGXIeASkloe9MBbuflUbWYBBrW75zJ+9o8HnrUWL0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/152d8d01-f53f-457f-bea6-07407827c78f.png",
+      "AssetFile": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\152d8d01-f53f-457f-bea6-07407827c78f.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZIKj6KJDGUNqBkaTSy9xtdwl9WDwItBOeIgGhgsmcrE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 10:20:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZIKj6KJDGUNqBkaTSy9xtdwl9WDwItBOeIgGhgsmcrE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/152d8d01-f53f-457f-bea6-07407827c78f.wh6afxjy2q.png",
+      "AssetFile": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\152d8d01-f53f-457f-bea6-07407827c78f.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZIKj6KJDGUNqBkaTSy9xtdwl9WDwItBOeIgGhgsmcrE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 10:20:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wh6afxjy2q"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/152d8d01-f53f-457f-bea6-07407827c78f.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZIKj6KJDGUNqBkaTSy9xtdwl9WDwItBOeIgGhgsmcrE="
         }
       ]
     },
@@ -7042,6 +7311,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-SE/G+wfcu5aOr+Oa80xCZhmSHRkVf/7GgQ0fdztFnSE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/444e4611-f6c0-4986-9c7f-d3ffb1958f9b.png",
+      "AssetFile": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\444e4611-f6c0-4986-9c7f-d3ffb1958f9b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "139564"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TR5mR+O1lIeMAUIuLeTHfWFCZqA3N2FCWCN8QCdlRPQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 09:39:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TR5mR+O1lIeMAUIuLeTHfWFCZqA3N2FCWCN8QCdlRPQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/444e4611-f6c0-4986-9c7f-d3ffb1958f9b.r6gficqdl3.png",
+      "AssetFile": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\444e4611-f6c0-4986-9c7f-d3ffb1958f9b.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "139564"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TR5mR+O1lIeMAUIuLeTHfWFCZqA3N2FCWCN8QCdlRPQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 09:39:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r6gficqdl3"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/444e4611-f6c0-4986-9c7f-d3ffb1958f9b.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TR5mR+O1lIeMAUIuLeTHfWFCZqA3N2FCWCN8QCdlRPQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6335c3f2-67b3-470a-82ed-e947281767d0.dyirxk0hx5.png",
+      "AssetFile": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\6335c3f2-67b3-470a-82ed-e947281767d0.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15886"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S5YCoK1/W8+AMqXPS78SsJ6RGvAn8++qcK4qmgDlqUw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 09:44:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dyirxk0hx5"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/6335c3f2-67b3-470a-82ed-e947281767d0.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-S5YCoK1/W8+AMqXPS78SsJ6RGvAn8++qcK4qmgDlqUw="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6335c3f2-67b3-470a-82ed-e947281767d0.png",
+      "AssetFile": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\6335c3f2-67b3-470a-82ed-e947281767d0.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15886"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S5YCoK1/W8+AMqXPS78SsJ6RGvAn8++qcK4qmgDlqUw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 09:44:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-S5YCoK1/W8+AMqXPS78SsJ6RGvAn8++qcK4qmgDlqUw="
         }
       ]
     },
@@ -7452,6 +7885,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-TR5mR+O1lIeMAUIuLeTHfWFCZqA3N2FCWCN8QCdlRPQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ed3e18e4-d5d6-4571-8331-62a8de1275b3.02vu0uwyeo.png",
+      "AssetFile": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\ed3e18e4-d5d6-4571-8331-62a8de1275b3.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22924"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SE/G+wfcu5aOr+Oa80xCZhmSHRkVf/7GgQ0fdztFnSE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 09:43:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "02vu0uwyeo"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/ed3e18e4-d5d6-4571-8331-62a8de1275b3.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SE/G+wfcu5aOr+Oa80xCZhmSHRkVf/7GgQ0fdztFnSE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ed3e18e4-d5d6-4571-8331-62a8de1275b3.png",
+      "AssetFile": "C:\\Users\\ciesi\\Desktop\\Lato\\.net\\Projekt\\System_Zarz\\wwwroot\\uploads\\ed3e18e4-d5d6-4571-8331-62a8de1275b3.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22924"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SE/G+wfcu5aOr+Oa80xCZhmSHRkVf/7GgQ0fdztFnSE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 09:43:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SE/G+wfcu5aOr+Oa80xCZhmSHRkVf/7GgQ0fdztFnSE="
         }
       ]
     },

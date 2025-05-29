@@ -82,93 +82,93 @@ public class RepairCostsModel : PageModel
 
     
     public async Task<IActionResult> OnPostGeneratePdfAsync(int customerId, int? selectedVehicleId, int? selectedMonth)
-{
-    // załaduj dane jak w OnPost()
-    var customer = await _context.Customers
-        .Include(c => c.Vehicles)
-        .ThenInclude(v => v.Orders)
-        .ThenInclude(o => o.OrderTasks)
-        .ThenInclude(ot => ot.Task)
-        .ThenInclude(t => t.TaskParts)
-        .ThenInclude(tp => tp.Part)
-        .FirstOrDefaultAsync(c => c.Id == customerId);
-
-    if (customer == null)
     {
-        return NotFound();
-    }
+        // załaduj dane jak w OnPost()
+        var customer = await _context.Customers
+            .Include(c => c.Vehicles)
+            .ThenInclude(v => v.Orders)
+            .ThenInclude(o => o.OrderTasks)
+            .ThenInclude(ot => ot.Task)
+            .ThenInclude(t => t.TaskParts)
+            .ThenInclude(tp => tp.Part)
+            .FirstOrDefaultAsync(c => c.Id == customerId);
 
-    // filtruj tak samo jak wcześniej
-    var orders = customer.Vehicles
-        .Where(v => !selectedVehicleId.HasValue || v.Id == selectedVehicleId)
-        .SelectMany(v => v.Orders)
-        .Where(o => !selectedMonth.HasValue || o.CreatedDate.Month == selectedMonth)
-        .ToList();
-
-    var reportItems = orders.Select(o =>
-    {
-        var laborCost = o.Tasks.Sum(ot => ot.Task.LaborCost);
-        var partsCost = o.Tasks.Sum(ot => ot.Task?.TaskParts?.Sum(tp => (tp.Part?.Price ?? 0) * tp.Quantity) ?? 0);
-        return new
+        if (customer == null)
         {
-            OrderId = o.Id,
-            Date = o.CreatedDate.ToString("dd.MM.yyyy"),
-            Vehicle = o.Vehicle.Brand + " " + o.Vehicle.Model,
-            LaborCost = laborCost,
-            PartsCost = partsCost,
-            Total = laborCost + partsCost
-        };
-    }).ToList();
+            return NotFound();
+        }
 
-    // generuj PDF
-    var stream = new MemoryStream();
-    var doc = Document.Create(container =>
-    {
-        container.Page(page =>
+        // filtruj tak samo jak wcześniej
+        var orders = customer.Vehicles
+            .Where(v => !selectedVehicleId.HasValue || v.Id == selectedVehicleId)
+            .SelectMany(v => v.Orders)
+            .Where(o => !selectedMonth.HasValue || o.CreatedDate.Month == selectedMonth)
+            .ToList();
+
+        var reportItems = orders.Select(o =>
         {
-            page.Margin(30);
-            page.Header().Text($"Raport kosztów - klient: {customer.FullName}").FontSize(18).Bold();
-            page.Content().Table(table =>
+            var laborCost = o.Tasks.Sum(ot => ot.Task.LaborCost);
+            var partsCost = o.Tasks.Sum(ot => ot.Task?.TaskParts?.Sum(tp => (tp.Part?.Price ?? 0) * tp.Quantity) ?? 0);
+            return new
             {
-                table.ColumnsDefinition(columns =>
+                OrderId = o.Id,
+                Date = o.CreatedDate.ToString("dd.MM.yyyy"),
+                Vehicle = o.Vehicle.Brand + " " + o.Vehicle.Model,
+                LaborCost = laborCost,
+                PartsCost = partsCost,
+                Total = laborCost + partsCost
+            };
+        }).ToList();
+
+        // generuj PDF
+        var stream = new MemoryStream();
+        var doc = Document.Create(container =>
+        {
+            container.Page(page =>
+            {
+                page.Margin(30);
+                page.Header().Text($"Raport kosztów - klient: {customer.FullName}").FontSize(18).Bold();
+                page.Content().Table(table =>
                 {
-                    columns.RelativeColumn(1);
-                    columns.RelativeColumn(2);
-                    columns.RelativeColumn(2);
-                    columns.RelativeColumn(2);
-                    columns.RelativeColumn(2);
+                    table.ColumnsDefinition(columns =>
+                    {
+                        columns.RelativeColumn(1);
+                        columns.RelativeColumn(2);
+                        columns.RelativeColumn(2);
+                        columns.RelativeColumn(2);
+                        columns.RelativeColumn(2);
+                    });
+
+                    table.Header(header =>
+                    {
+                        header.Cell().Text("Zlecenie").Bold();
+                        header.Cell().Text("Data").Bold();
+                        header.Cell().Text("Pojazd").Bold();
+                        header.Cell().Text("Robocizna").Bold();
+                        header.Cell().Text("Części").Bold();
+                    });
+
+                    foreach (var item in reportItems)
+                    {
+                        table.Cell().Text(item.OrderId.ToString());
+                        table.Cell().Text(item.Date);
+                        table.Cell().Text(item.Vehicle);
+                        table.Cell().Text(item.LaborCost.ToString("C", new CultureInfo("pl-PL")));
+                        table.Cell().Text(item.PartsCost.ToString("C", new CultureInfo("pl-PL")));
+                    }
+
+                    table.Cell().ColumnSpan(3).Text("Suma").Bold();
+                    table.Cell().Text(reportItems.Sum(i => i.LaborCost).ToString("C", new CultureInfo("pl-PL"))).Bold();
+                    table.Cell().Text(reportItems.Sum(i => i.PartsCost).ToString("C", new CultureInfo("pl-PL"))).Bold();
                 });
-
-                table.Header(header =>
-                {
-                    header.Cell().Text("Zlecenie").Bold();
-                    header.Cell().Text("Data").Bold();
-                    header.Cell().Text("Pojazd").Bold();
-                    header.Cell().Text("Robocizna").Bold();
-                    header.Cell().Text("Części").Bold();
-                });
-
-                foreach (var item in reportItems)
-                {
-                    table.Cell().Text(item.OrderId.ToString());
-                    table.Cell().Text(item.Date);
-                    table.Cell().Text(item.Vehicle);
-                    table.Cell().Text(item.LaborCost.ToString("C", new CultureInfo("pl-PL")));
-                    table.Cell().Text(item.PartsCost.ToString("C", new CultureInfo("pl-PL")));
-                }
-
-                table.Cell().ColumnSpan(3).Text("Suma").Bold();
-                table.Cell().Text(reportItems.Sum(i => i.LaborCost).ToString("C", new CultureInfo("pl-PL"))).Bold();
-                table.Cell().Text(reportItems.Sum(i => i.PartsCost).ToString("C", new CultureInfo("pl-PL"))).Bold();
             });
         });
-    });
 
-    doc.GeneratePdf(stream);
-    stream.Position = 0;
+        doc.GeneratePdf(stream);
+        stream.Position = 0;
 
-    return File(stream.ToArray(), "application/pdf", "raport_kosztow.pdf");
-}
+        return File(stream.ToArray(), "application/pdf", "raport_kosztow.pdf");
+    }
 
     
     public class RepairReportItem

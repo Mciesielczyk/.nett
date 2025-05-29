@@ -1,0 +1,60 @@
+﻿@page
+@using System.Globalization
+@model RepairSummaryModel
+@{
+    ViewData["Title"] = "Raport napraw - podsumowanie";
+}
+
+<h1>Raport napraw - podsumowanie</h1>
+
+<form method="post">
+    <label>Miesiąc:</label>
+    <select asp-for="SelectedMonth">
+        @for (int i = 1; i <= 12; i++)
+        {
+            <option value="@i">@CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i)</option>
+        }
+    </select>
+
+    <label>Rok:</label>
+    <select asp-for="SelectedYear">
+        @for (int y = DateTime.Now.Year; y >= DateTime.Now.Year - 30; y--)
+        {
+            <option value="@y">@y</option>
+        }
+    </select>
+
+    <button type="submit">Generuj</button>
+</form>
+
+@if (Model.ReportItems.Any())
+{
+    <h2>Wyniki:</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Klient</th>
+                <th>Pojazd</th>
+                <th>Koszt</th>
+                <th>Zlecenia</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ReportItems)
+            {
+                <tr>
+                    <td>@item.Customer</td>
+                    <td>@item.Vehicle</td>
+                    <td>@item.TotalCost.ToString("C")</td>
+                    <td>@item.OrderCount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <form method="post" asp-page-handler="GeneratePdf">
+        <input type="hidden" asp-for="SelectedMonth" />
+        <input type="hidden" asp-for="SelectedYear" />
+        <button type="submit">Pobierz jako PDF</button>
+    </form>
+}

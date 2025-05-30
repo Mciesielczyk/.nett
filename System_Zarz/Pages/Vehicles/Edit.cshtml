@@ -1,39 +1,68 @@
-﻿@page
+﻿@page "{id}"
 @model System_Zarz.Pages.Vehicles.EditModel
 @{
     ViewData["Title"] = "Edytuj pojazd";
 }
 
-<h2>Edytuj pojazd</h2>
+<h1>Edytuj pojazd</h1>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
 
 <form method="post" enctype="multipart/form-data">
     <input type="hidden" asp-for="Vehicle.Id" />
-    <div class="form-group">
-        <label asp-for="Vehicle.VIN"></label>
+
+    <div class="form-group mb-3">
+        <label asp-for="Vehicle.CustomerId" class="form-label">ID klienta</label>
+        <input asp-for="Vehicle.CustomerId" class="form-control" />
+        <span asp-validation-for="Vehicle.CustomerId" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Vehicle.Brand" class="form-label">Marka</label>
+        <input asp-for="Vehicle.Brand" class="form-control" />
+        <span asp-validation-for="Vehicle.Brand" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Vehicle.Model" class="form-label">Model</label>
+        <input asp-for="Vehicle.Model" class="form-control" />
+        <span asp-validation-for="Vehicle.Model" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Vehicle.VIN" class="form-label">VIN</label>
         <input asp-for="Vehicle.VIN" class="form-control" />
         <span asp-validation-for="Vehicle.VIN" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="Vehicle.RegistrationNumber"></label>
+    <div class="form-group mb-3">
+        <label asp-for="Vehicle.RegistrationNumber" class="form-label">Numer rejestracyjny</label>
         <input asp-for="Vehicle.RegistrationNumber" class="form-control" />
         <span asp-validation-for="Vehicle.RegistrationNumber" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label for="UploadPhoto">Zdjęcie pojazdu (opcjonalnie)</label>
-        <input type="file" asp-for="UploadPhoto" class="form-control" />
+    <div class="form-group mb-3">
+        <label asp-for="Vehicle.Year" class="form-label">Rok produkcji</label>
+        <input asp-for="Vehicle.Year" class="form-control" type="number" />
+        <span asp-validation-for="Vehicle.Year" class="text-danger"></span>
     </div>
-    
-    <div class="form-group">
-        <label asp-for="Vehicle.CustomerId" class="control-label">Klient</label>
-        <select asp-for="Vehicle.CustomerId" asp-items="Model.CustomersList" class="form-control" required>
-            <option value="">-- Wybierz klienta --</option>
-        </select>
-        <span asp-validation-for="Vehicle.CustomerId" class="text-danger"></span>
+    <div class="form-group mb-3">
+        <label class="form-label">Aktualne zdjęcie</label>
+        @if (!string.IsNullOrEmpty(Model.Vehicle.ImagePath))
+        {
+            <img src="~/uploads/@Model.Vehicle.ImagePath" alt="Zdjęcie pojazdu" width="200" class="d-block mb-2" />
+        }
+        else
+        {
+            <p>Brak zdjęcia</p>
+        }
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="UploadPhoto" class="form-label">Zmień zdjęcie pojazdu</label>
+        <input asp-for="UploadPhoto" type="file" class="form-control" />
+        <span asp-validation-for="UploadPhoto" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-3">Zapisz</button>
-    <a asp-page="Index" class="btn btn-secondary mt-3">Anuluj</a>
-    
+    <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+    <a asp-page="/Vehicles/Index" class="btn btn-secondary">Anuluj</a>
 </form>
 
 @section Scripts {

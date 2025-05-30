@@ -31,6 +31,9 @@ public class EditModel : PageModel
 
     [BindProperty(SupportsGet = true)]
     public int? SearchId { get; set; }
+    
+    [BindProperty]
+    public int DeleteCustomerId { get; set; }
 
     public async Task OnGetAsync()
     {
@@ -134,4 +137,30 @@ public class EditModel : PageModel
             AllCustomers = new List<Customer>();
         }
     }
+    public async Task<IActionResult> OnPostDeleteAsync()
+    {
+        var client = _clientFactory.CreateClient("API");
+        var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
+
+        var request = new HttpRequestMessage(HttpMethod.Delete, $"api/CustomersApi/{DeleteCustomerId}");
+        if (!string.IsNullOrEmpty(cookie))
+        {
+            request.Headers.Add("Cookie", cookie);
+        }
+
+        var response = await client.SendAsync(request);
+
+        if (response.IsSuccessStatusCode || response.StatusCode == System.Net.HttpStatusCode.NoContent)
+        {
+            Message = "✅ Klient został usunięty.";
+        }
+        else
+        {
+            Message = $"❌ Błąd usuwania klienta: {response.StatusCode}";
+        }
+
+        await LoadAllCustomersAsync();
+        return Page();
+    }
+
 }

@@ -1,171 +1,196 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NLog;
 using System_Zarz.Data;
-using Task = System.Threading.Tasks.Task; 
+using Task = System.Threading.Tasks.Task;
+using NLog.Web;
 
+var logger = NLog.LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
 
-
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddHttpClient(); // ← bez tego nie zadziała HttpClientFactory
-builder.Services.AddCors(options =>
+try
 {
-    options.AddPolicy("AllowAll",
-        policy =>
-        {
-            policy.WithOrigins("https://localhost:5264", "http://localhost:5264")
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials();
-        });
-});
+    var builder = WebApplication.CreateBuilder(args);
 
-// Dodaj usługi
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddHttpContextAccessor();
+    // Zastąp domyślny logger NLogiem
+    builder.Logging.ClearProviders();
+    builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+    builder.Host.UseNLog();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-        sqlServerOptionsAction: sqlOptions =>
-        {
-            sqlOptions.EnableRetryOnFailure(
-                maxRetryCount: 5,
-                maxRetryDelay: TimeSpan.FromSeconds(30),
-                errorNumbersToAdd: null);
-        }));
-
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
-
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.LoginPath = "/Account/Login";
-    options.AccessDeniedPath = "/Account/AccessDenied";
-});
-
-// Dodaj HttpClient dla API
-builder.Services.AddHttpClient("API", client =>
-{
-    client.BaseAddress = new Uri(builder.Configuration["ApiSettings:BaseUrl"] ?? "http://localhost:7236/");
-});
-builder.Services.AddHttpClient("API")
-    .ConfigurePrimaryHttpMessageHandler(() =>
+    builder.Services.AddHttpClient(); // ← bez tego nie zadziała HttpClientFactory
+    builder.Services.AddCors(options =>
     {
-        return new HttpClientHandler
-        {
-            UseCookies = true
-        };
+        options.AddPolicy("AllowAll",
+            policy =>
+            {
+                policy.WithOrigins("https://localhost:5264", "http://localhost:5264")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();
+            });
     });
 
-builder.Services.AddControllers().AddJsonOptions(x =>
-{
-    x.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
-});
+    // Dodaj usługi
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+    builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+            sqlServerOptionsAction: sqlOptions =>
+            {
+                sqlOptions.EnableRetryOnFailure(
+                    maxRetryCount: 5,
+                    maxRetryDelay: TimeSpan.FromSeconds(30),
+                    errorNumbersToAdd: null);
+            }));
 
-var app = builder.Build();
-QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+    builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+        .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddDefaultTokenProviders();
 
-// Zastosuj migracje i utwórz bazę danych
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    try
+    builder.Services.ConfigureApplicationCookie(options =>
     {
-        var context = services.GetRequiredService<ApplicationDbContext>();
-        context.Database.Migrate();
-    }
-    catch (Exception ex)
+        options.LoginPath = "/Account/Login";
+        options.AccessDeniedPath = "/Account/AccessDenied";
+    });
+
+    builder.Services.AddHttpClient("API", client =>
     {
-        var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "Wystąpił błąd podczas migracji bazy danych.");
-    }
-}
-
-// Tworzenie ról i admina w scope
-using (var scope = app.Services.CreateScope())
-{
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
-
-    string[] roles = new[] { "Admin", "User", "Recepcjonista", "Mechanik" };
-
-    foreach (var role in roles)
-    {
-        if (!await roleManager.RoleExistsAsync(role))
+        client.BaseAddress = new Uri(builder.Configuration["ApiSettings:BaseUrl"] ?? "http://localhost:7236/");
+    });
+    builder.Services.AddHttpClient("API")
+        .ConfigurePrimaryHttpMessageHandler(() =>
         {
-            await roleManager.CreateAsync(new IdentityRole(role));
+            return new HttpClientHandler
+            {
+                UseCookies = true
+            };
+        });
+
+    builder.Services.AddControllers().AddJsonOptions(x =>
+    {
+        x.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+    });
+
+    builder.Services.AddControllersWithViews();
+    builder.Services.AddRazorPages();
+
+    var app = builder.Build();
+    QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+
+    // Zastosuj migracje i utwórz bazę danych
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        try
+        {
+            var context = services.GetRequiredService<ApplicationDbContext>();
+            context.Database.Migrate();
+        }
+        catch (Exception ex)
+        {
+            var scopedLogger = services.GetRequiredService<ILogger<Program>>();
+            scopedLogger.LogError(ex, "Wystąpił błąd podczas migracji bazy danych.");
         }
     }
 
-    var adminEmail = "admin@1";
-    var adminPassword = "Admin123!";
-
-    var adminUser = await userManager.FindByEmailAsync(adminEmail);
-    if (adminUser == null)
+    // Tworzenie ról i admina w scope
+    using (var scope = app.Services.CreateScope())
     {
-        adminUser = new IdentityUser
-        {
-            UserName = adminEmail,
-            Email = adminEmail,
-            EmailConfirmed = true
-        };
+        var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
 
-        var createAdmin = await userManager.CreateAsync(adminUser, adminPassword);
+        string[] roles = new[] { "Admin", "User", "Recepcjonista", "Mechanik" };
 
-        if (createAdmin.Succeeded)
+        foreach (var role in roles)
         {
-            await userManager.AddToRoleAsync(adminUser, "Admin");
-            Console.WriteLine("Admin user created.");
+            if (!await roleManager.RoleExistsAsync(role))
+            {
+                await roleManager.CreateAsync(new IdentityRole(role));
+            }
+        }
+
+        var adminEmail = "admin@1";
+        var adminPassword = "Admin123!";
+
+        var adminUser = await userManager.FindByEmailAsync(adminEmail);
+        if (adminUser == null)
+        {
+            adminUser = new IdentityUser
+            {
+                UserName = adminEmail,
+                Email = adminEmail,
+                EmailConfirmed = true
+            };
+
+            var createAdmin = await userManager.CreateAsync(adminUser, adminPassword);
+
+            if (createAdmin.Succeeded)
+            {
+                await userManager.AddToRoleAsync(adminUser, "Admin");
+                Console.WriteLine("Admin user created.");
+            }
+            else
+            {
+                foreach (var error in createAdmin.Errors)
+                {
+                    Console.WriteLine($"Error creating admin: {error.Description}");
+                }
+            }
         }
         else
         {
-            foreach (var error in createAdmin.Errors)
+            if (!await userManager.IsInRoleAsync(adminUser, "Admin"))
             {
-                Console.WriteLine($"Error creating admin: {error.Description}");
+                await userManager.AddToRoleAsync(adminUser, "Admin");
             }
         }
     }
+
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
     else
     {
-        if (!await userManager.IsInRoleAsync(adminUser, "Admin"))
-        {
-            await userManager.AddToRoleAsync(adminUser, "Admin");
-        }
+        app.UseExceptionHandler("/Home/Error");
+        app.UseHsts();
     }
+
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
+
+    app.UseRouting();
+
+    app.UseAuthentication();
+    app.UseAuthorization();
+    app.UseCors("AllowAll");
+
+    app.MapRazorPages();
+    app.MapGet("/", context =>
+    {
+        context.Response.Redirect("/Account/Login");
+        return Task.CompletedTask;
+    });
+    app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+    
+    var logPath = Path.Combine(AppContext.BaseDirectory, "logs");
+    if (!Directory.Exists(logPath))
+    {
+        Directory.CreateDirectory(logPath);
+    }
+
+    app.Run();
 }
-
-if (app.Environment.IsDevelopment())
+catch (Exception ex)
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    logger.Error(ex, "Program stopped because of exception");
+    throw;
 }
-else
+finally
 {
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
+    NLog.LogManager.Shutdown();
 }
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthentication();
-app.UseAuthorization();
-app.UseCors("AllowAll");
-
-app.MapRazorPages();
-app.MapGet("/", context =>
-{
-    context.Response.Redirect("/Account/Login");
-    return Task.CompletedTask;
-});
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.Run();

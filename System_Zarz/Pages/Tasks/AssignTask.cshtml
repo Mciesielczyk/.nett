@@ -5,6 +5,12 @@
 }
 
 <h1>Przypisz czynności do zlecenia</h1>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
 
 <form method="post">
     <div class="form-group">

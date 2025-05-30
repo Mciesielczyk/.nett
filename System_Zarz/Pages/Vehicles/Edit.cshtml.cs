@@ -1,91 +1,103 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
-using System_Zarz.Data;
 using System_Zarz.Models;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.IO;
-using System;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Http;
 
 namespace System_Zarz.Pages.Vehicles
 {
-    [Authorize(Roles = "Admin,Mechanik")]
+    [Authorize(Roles = "Admin,Mechanik,Recepcjonista")]
     public class EditModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
-        private readonly IWebHostEnvironment _env;
+        private readonly IHttpClientFactory _clientFactory;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public EditModel(ApplicationDbContext context, IWebHostEnvironment env)
+        public EditModel(IHttpClientFactory clientFactory, IHttpContextAccessor httpContextAccessor)
         {
-            _context = context;
-            _env = env;
+            _clientFactory = clientFactory;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         [BindProperty]
-        public Vehicle Vehicle { get; set; }
+        public Vehicle Vehicle { get; set; } = new();
 
         [BindProperty]
-        public IFormFile UploadPhoto { get; set; }
+        public IFormFile? UploadPhoto { get; set; }
 
-        public List<SelectListItem> CustomersList { get; set; }
+        public string? ErrorMessage { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int id)
         {
-            if (id == null)
-                return NotFound();
+            var client = _clientFactory.CreateClient("API");
+            var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
 
-            Vehicle = await _context.Vehicles.FindAsync(id);
-            if (Vehicle == null)
-                return NotFound();
+            var request = new HttpRequestMessage(HttpMethod.Get, $"api/Vehicles/{id}");
+            if (!string.IsNullOrEmpty(cookie))
+            {
+                request.Headers.Add("Cookie", cookie);
+            }
 
-            CustomersList = await _context.Customers
-                .Select(c => new SelectListItem
-                {
-                    Value = c.Id.ToString(),
-                    Text = c.FullName // lub np. $"{c.FirstName} {c.LastName}"
-                }).ToListAsync();
+            var response = await client.SendAsync(request);
 
-            return Page();
+            if (response.IsSuccessStatusCode)
+            {
+                Vehicle = await response.Content.ReadAsAsync<Vehicle>();
+                return Page();
+            }
+
+            ErrorMessage = $"Nie udało się załadować pojazdu: {response.StatusCode}";
+            return RedirectToPage("/Vehicles/Index");
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
-                return Page();
-
-            var vehicleToUpdate = await _context.Vehicles.FindAsync(Vehicle.Id);
-
-            if (vehicleToUpdate == null)
-                return NotFound();
-
-            vehicleToUpdate.VIN = Vehicle.VIN;
-            vehicleToUpdate.RegistrationNumber = Vehicle.RegistrationNumber;
-            vehicleToUpdate.CustomerId = Vehicle.CustomerId;
-
-            if (UploadPhoto != null)
             {
-                var uploadsFolder = Path.Combine(_env.WebRootPath, "uploads");
-                if (!Directory.Exists(uploadsFolder))
-                    Directory.CreateDirectory(uploadsFolder);
-
-                var uniqueFileName = Guid.NewGuid() + Path.GetExtension(UploadPhoto.FileName);
-                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    await UploadPhoto.CopyToAsync(fileStream);
-                }
-
-                vehicleToUpdate.ImagePath = uniqueFileName;
+                return Page();
             }
 
-            await _context.SaveChangesAsync();
+            var client = _clientFactory.CreateClient("API");
+            var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
 
-            return RedirectToPage("Index");
+            using var form = new MultipartFormDataContent();
+
+            form.Add(new StringContent(Vehicle.Id.ToString()), "Id");
+            form.Add(new StringContent(Vehicle.CustomerId.ToString()), "CustomerId");
+            form.Add(new StringContent(Vehicle.Brand ?? ""), "Brand");
+            form.Add(new StringContent(Vehicle.Model ?? ""), "Model");
+            form.Add(new StringContent(Vehicle.VIN ?? ""), "VIN");
+            form.Add(new StringContent(Vehicle.RegistrationNumber ?? ""), "RegistrationNumber");
+            form.Add(new StringContent(Vehicle.Year.ToString()), "Year");
+
+            if (UploadPhoto != null && UploadPhoto.Length > 0)
+            {
+                var streamContent = new StreamContent(UploadPhoto.OpenReadStream());
+                streamContent.Headers.ContentType = new MediaTypeHeaderValue(UploadPhoto.ContentType);
+                form.Add(streamContent, "UploadPhoto", UploadPhoto.FileName);
+            }
+
+            var request = new HttpRequestMessage(HttpMethod.Put, $"api/Vehicles/{Vehicle.Id}")
+            {
+                Content = form
+            };
+
+            if (!string.IsNullOrEmpty(cookie))
+            {
+                request.Headers.Add("Cookie", cookie);
+            }
+
+            var response = await client.SendAsync(request);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return RedirectToPage("/Vehicles/Index", new { success = true });
+            }
+
+            var errorMsg = await response.Content.ReadAsStringAsync();
+            ErrorMessage = $"Błąd podczas aktualizacji pojazdu: {response.StatusCode} - {errorMsg}";
+            return Page();
         }
     }
 }

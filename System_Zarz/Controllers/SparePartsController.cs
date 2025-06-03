@@ -7,7 +7,7 @@ namespace System_Zarz.Api
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin,Recepcjonista")]
+    [Authorize(Roles = "Admin,Mechanik")]
     public class SparePartsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;

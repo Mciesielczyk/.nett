@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using System_Zarz.Data;
 using Task = System.Threading.Tasks.Task;
 
@@ -50,10 +51,12 @@ public class AssignTasksModel : PageModel
             }
         }
 
-        await _context.SaveChangesAsync();
+        // TempData["SuccessMessage"] = "Czynności zostały przypisane.";
+        Message = "Czynności zostały przypisane."; // nowa właściwość w modelu strony
 
-        TempData["SuccessMessage"] = "Czynności zostały przypisane.";
-        return RedirectToPage("/Orders/Details", new { id = OrderId });
+        await LoadSelectsAsync();
+
+        return Page(); // nie przekierowujemy, zostajemy na stronie
     }
 
     private async Task LoadSelectsAsync()
@@ -69,4 +72,7 @@ public class AssignTasksModel : PageModel
 
         AllTasks = new MultiSelectList(await _context.Tasks.ToListAsync(), "Id", "Description");
     }
+    [TempData]
+    public string? Message { get; set; }
+
 }

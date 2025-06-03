@@ -1242,6 +1242,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\444e4611-f6c0-4986-9c7f-d3ffb1958f9b.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5da645b8-adb2-4e80-945b-e351af8fe729.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>System_Zarz</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/System_Zarz</BasePath>
+      <RelativePath>uploads/5da645b8-adb2-4e80-945b-e351af8fe729.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>cwhnhnt8nw</Fingerprint>
+      <Integrity>XPfGNskdSkMHUEDWZAWSKG2Zw2sVq3EfPc3pwgrECGM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5da645b8-adb2-4e80-945b-e351af8fe729.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\6335c3f2-67b3-470a-82ed-e947281767d0.png'))">
       <SourceType>Package</SourceType>
       <SourceId>System_Zarz</SourceId>
@@ -1331,6 +1349,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\bcd66d57-e17f-4d90-81da-bf2c79dc4d4b.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cb8c929d-5ca8-427c-a4f0-836a1bb79ecf.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>System_Zarz</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/System_Zarz</BasePath>
+      <RelativePath>uploads/cb8c929d-5ca8-427c-a4f0-836a1bb79ecf.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>7sychw70nj</Fingerprint>
+      <Integrity>F9w9jhgIPfsAlaO4zMuvnykt4/BQQR/s9uNSljvnGzU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\cb8c929d-5ca8-427c-a4f0-836a1bb79ecf.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\dde3e75f-c242-4b2a-beab-77e9d111df9d.png'))">
       <SourceType>Package</SourceType>

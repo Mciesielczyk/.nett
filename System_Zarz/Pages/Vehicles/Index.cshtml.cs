@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using System_Zarz.Data;
 using System_Zarz.Models;
-using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Task = System.Threading.Tasks.Task;
+using System.Collections.Generic;
+using System.Net.Http;
+using Microsoft.AspNetCore.Http;
+using System.Linq;
 
 namespace System_Zarz.Pages.Vehicles
 {
-    [Authorize(Roles = "Admin,Mechanik")]
+    [Authorize(Roles = "Admin,Mechanik,Recepcjonista")]
     public class IndexModel : PageModel
     {
         private readonly IHttpClientFactory _clientFactory;
@@ -23,22 +23,46 @@ namespace System_Zarz.Pages.Vehicles
             _httpContextAccessor = httpContextAccessor;
         }
 
+        public List<Vehicle>? Vehicles { get; set; }
+
         [BindProperty] public Vehicle Vehicle { get; set; } = new();
 
         [BindProperty] public IFormFile? UploadPhoto { get; set; }
 
-        public bool SuccessMessage { get; set; } = false;
+        [BindProperty] public int VehicleIdToDelete { get; set; }
+
+        public bool SuccessMessage { get; set; }
         public string? ErrorMessage { get; set; }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
+            var client = _clientFactory.CreateClient("API");
+            var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
+
+            var request = new HttpRequestMessage(HttpMethod.Get, "api/Vehicles");
+            if (!string.IsNullOrEmpty(cookie))
+            {
+                request.Headers.Add("Cookie", cookie);
+            }
+
+            var response = await client.SendAsync(request);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Vehicles = await response.Content.ReadAsAsync<List<Vehicle>>();
+            }
+            else
+            {
+                ErrorMessage = $"❌ Nie udało się załadować pojazdów: {response.StatusCode}";
+            }
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAddAsync()
         {
             if (!ModelState.IsValid)
             {
                 ErrorMessage = "❌ Upewnij się, że wszystkie pola są poprawnie wypełnione.";
+                await OnGetAsync();
                 return Page();
             }
 
@@ -61,8 +85,10 @@ namespace System_Zarz.Pages.Vehicles
                 form.Add(streamContent, "UploadPhoto", UploadPhoto.FileName);
             }
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "api/Vehicles");
-            request.Content = form;
+            var request = new HttpRequestMessage(HttpMethod.Post, "api/Vehicles")
+            {
+                Content = form
+            };
 
             if (!string.IsNullOrEmpty(cookie))
             {
@@ -86,6 +112,36 @@ namespace System_Zarz.Pages.Vehicles
                 SuccessMessage = false;
             }
 
+            await OnGetAsync(); // załaduj listę pojazdów ponownie
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        {
+            var client = _clientFactory.CreateClient("API");
+            var cookie = _httpContextAccessor.HttpContext.Request.Headers["Cookie"].ToString();
+
+            var request = new HttpRequestMessage(HttpMethod.Delete, $"api/Vehicles/{id}");
+
+            if (!string.IsNullOrEmpty(cookie))
+            {
+                request.Headers.Add("Cookie", cookie);
+            }
+
+            var response = await client.SendAsync(request);
+
+            if (response.IsSuccessStatusCode)
+            {
+                SuccessMessage = true;
+                ErrorMessage = null;
+            }
+            else
+            {
+                ErrorMessage = $"❌ Nie udało się usunąć pojazdu: {response.StatusCode}";
+                SuccessMessage = false;
+            }
+
+            await OnGetAsync(); // odśwież listę po usunięciu
             return Page();
         }
     }

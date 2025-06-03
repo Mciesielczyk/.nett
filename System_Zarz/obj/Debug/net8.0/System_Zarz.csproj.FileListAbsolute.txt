@@ -592,3 +592,9 @@ C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\obj\Debug\net8.0\refint\S
 C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\obj\Debug\net8.0\System_Zarz.pdb
 C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\obj\Debug\net8.0\System_Zarz.genruntimeconfig.cache
 C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\obj\Debug\net8.0\ref\System_Zarz.dll
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net8.0\nlog.config
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net8.0\NLog.dll
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net8.0\NLog.Web.AspNetCore.dll

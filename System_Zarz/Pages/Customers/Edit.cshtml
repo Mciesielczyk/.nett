@@ -49,6 +49,7 @@
         <th>Imię i nazwisko</th>
         <th>Email</th>
         <th>Telefon</th>
+        <th>Akcje</th>
     </tr>
     </thead>
     <tbody>
@@ -59,6 +60,12 @@
             <td>@c.FullName</td>
             <td>@c.Email</td>
             <td>@c.Phone</td>
+            <td>
+                <form method="post" asp-page-handler="Delete">
+                    <input type="hidden" name="DeleteCustomerId" value="@c.Id" />
+                    <button type="submit" onclick="return confirm('Czy na pewno chcesz usunąć tego klienta?');">Usuń</button>
+                </form>
+            </td>
         </tr>
     }
     </tbody>

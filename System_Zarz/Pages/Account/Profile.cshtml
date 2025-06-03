@@ -58,6 +58,10 @@
                     <li class="list-group-item"><a asp-page="/Customers/Edit" class="btn btn-outline-success w-100">Edytuj klienta</a></li>
                     <li class="list-group-item"><a asp-page="/Customers/Index" class="btn btn-outline-success w-100">Lista klientów</a></li>
                     <li class="list-group-item"><a asp-page="/Vehicles/Create" class="btn btn-outline-primary w-100">Dodaj pojazd do klienta</a></li>
+                    <li class="list-group-item"><a asp-page="/Order/Create" class="btn btn-outline-success w-100">Nowe zlecenie dla pojazdu</a></li>
+                    <li class="list-group-item"><a asp-page="/RepairReportModel" class="btn btn-outline-success w-100">Generuj raport</a></li>
+                    <li class="list-group-item"><a asp-page="/RepairSummary" class="btn btn-outline-primary w-100">Raport napraw</a></li>
+
                 </ul>
             }
             else if (Model.Role == "Mechanik")
@@ -65,6 +69,8 @@
                 <h5>Panel mechanika</h5>
                 <ul class="list-group list-group-flush mb-3">
                     <li class="list-group-item"><a asp-page="/Vehicles/Index" class="btn btn-outline-warning w-100">Zarządzaj pojazdami</a></li>
+                    <li class="list-group-item"><a asp-page="/Tasks/AssignTask" class="btn btn-outline-warning w-100">Dodaj czynności serwisowe do zlecenia</a></li>
+                    <li class="list-group-item"><a asp-page="/Order/ChangeStatus" class="btn btn-outline-warning w-100">Zmień status zlecenia</a></li>
                 </ul>
             }
             else

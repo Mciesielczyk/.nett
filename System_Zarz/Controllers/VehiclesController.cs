@@ -9,6 +9,8 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System_Zarz.Mappers;
+using System_Zarz.DTOs;
 
 namespace System_Zarz.Api
 {
@@ -19,11 +21,13 @@ namespace System_Zarz.Api
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _env;
+        private readonly VehicleMapper _mapper;
 
-        public VehiclesController(ApplicationDbContext context, IWebHostEnvironment env)
+        public VehiclesController(ApplicationDbContext context, IWebHostEnvironment env, VehicleMapper mapper)
         {
             _context = context;
             _env = env;
+            _mapper = mapper;
         }
 
         // GET: api/vehicles
@@ -31,6 +35,7 @@ namespace System_Zarz.Api
         public async Task<IActionResult> GetVehicles()
         {
             var vehicles = await _context.Vehicles.Include(v => v.Customer).ToListAsync();
+            var vehicleDtos = vehicles.Select(v => _mapper.ToDto(v));
             return Ok(vehicles);
         }
 
@@ -42,13 +47,14 @@ namespace System_Zarz.Api
             if (vehicle == null)
                 return NotFound();
 
-            return Ok(vehicle);
+            var dto = _mapper.ToDto(vehicle);
+            return Ok(dto);
         }
 
         // POST: api/vehicles
         [HttpPost]
         [RequestSizeLimit(10_000_000)] // limit uploadu 10MB, zmień wedle potrzeby
-        public async Task<IActionResult> CreateVehicle([FromForm] VehicleCreateDto dto)
+        public async Task<IActionResult> CreateVehicle([FromForm] VehicleDto dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -87,7 +93,7 @@ namespace System_Zarz.Api
         // PUT: api/vehicles/{id}
         [HttpPut("{id}")]
         [RequestSizeLimit(10_000_000)]
-        public async Task<IActionResult> UpdateVehicle(int id, [FromForm] VehicleCreateDto dto)
+        public async Task<IActionResult> UpdateVehicle(int id, [FromForm] VehicleDto dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -151,16 +157,5 @@ namespace System_Zarz.Api
 
             return NoContent();
         }
-    }
-
-    public class VehicleCreateDto
-    {
-        public int CustomerId { get; set; }
-        public string Brand { get; set; } = null!;
-        public string Model { get; set; } = null!;
-        public string VIN { get; set; } = null!;
-        public string RegistrationNumber { get; set; } = null!;
-        public int Year { get; set; }
-        public IFormFile? UploadPhoto { get; set; }
     }
 }

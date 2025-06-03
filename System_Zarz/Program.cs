@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System_Zarz.Data;
+using System_Zarz.Mappers;
 using Task = System.Threading.Tasks.Task; 
 
 
@@ -65,6 +66,7 @@ builder.Services.AddControllers().AddJsonOptions(x =>
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<VehicleMapper>();
 
 var app = builder.Build();
 QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;

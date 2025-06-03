@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NLog;
 using System_Zarz.Data;
 using System_Zarz.Mappers;
-using Task = System.Threading.Tasks.Task; 
+using Task = System.Threading.Tasks.Task;
 using NLog.Web;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();

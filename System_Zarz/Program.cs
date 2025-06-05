@@ -5,6 +5,7 @@ using System_Zarz.Data;
 using System_Zarz.Mappers;
 using Task = System.Threading.Tasks.Task;
 using NLog.Web;
+using System_Zarz.Services;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromFile("nlog.config").GetCurrentClassLogger();
 
@@ -76,6 +77,9 @@ try
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<VehicleMapper>();
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddTransient<EmailService>();
+builder.Services.AddHostedService<OrderReportService>();
 
     var app = builder.Build();
     QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
@@ -101,9 +105,11 @@ builder.Services.AddSingleton<VehicleMapper>();
     {
         var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
         var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
-
         string[] roles = new[] { "Admin", "User", "Recepcjonista", "Mechanik" };
 
+        //var emailService = scope.ServiceProvider.GetRequiredService<EmailService>();
+        //await emailService.SendEmailWithPdfAsync();
+        
         foreach (var role in roles)
         {
             if (!await roleManager.RoleExistsAsync(role))

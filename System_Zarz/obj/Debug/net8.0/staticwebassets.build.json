@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "Hash": "mLCxSyVI7KjZTXoZHcqhmJNq+WoRj2pTcX3y1phQKkI=",
-=======
-  "Hash": "VhH4Ahxj4gSFqTu9PWDxPWsLIp9lqL9nYZXamXAVRvg=",
->>>>>>> 048abb4fd2aba78c701568ad4bc750a64640b3d5
+  "Hash": "SjBs+F0Ikk9kl/5ByDSNNuyxBn5tN2L0AIV/xhhvCNY=",
   "Source": "System_Zarz",
   "BasePath": "_content/System_Zarz",
   "Mode": "Default",
@@ -6891,11 +6887,7 @@
         },
         {
           "Name": "Last-Modified",
-<<<<<<< HEAD
-          "Value": "Tue, 03 Jun 2025 19:37:35 GMT"
-=======
-          "Value": "Thu, 29 May 2025 08:25:09 GMT"
->>>>>>> 048abb4fd2aba78c701568ad4bc750a64640b3d5
+          "Value": "Thu, 05 Jun 2025 11:11:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6940,11 +6932,7 @@
         },
         {
           "Name": "Last-Modified",
-<<<<<<< HEAD
-          "Value": "Tue, 03 Jun 2025 19:37:35 GMT"
-=======
-          "Value": "Thu, 29 May 2025 08:25:09 GMT"
->>>>>>> 048abb4fd2aba78c701568ad4bc750a64640b3d5
+          "Value": "Thu, 05 Jun 2025 11:11:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6989,11 +6977,7 @@
         },
         {
           "Name": "Last-Modified",
-<<<<<<< HEAD
-          "Value": "Tue, 03 Jun 2025 19:37:35 GMT"
-=======
-          "Value": "Thu, 29 May 2025 08:25:09 GMT"
->>>>>>> 048abb4fd2aba78c701568ad4bc750a64640b3d5
+          "Value": "Thu, 05 Jun 2025 11:11:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -7030,11 +7014,7 @@
         },
         {
           "Name": "Last-Modified",
-<<<<<<< HEAD
-          "Value": "Tue, 03 Jun 2025 19:37:35 GMT"
-=======
-          "Value": "Thu, 29 May 2025 08:25:09 GMT"
->>>>>>> 048abb4fd2aba78c701568ad4bc750a64640b3d5
+          "Value": "Thu, 05 Jun 2025 11:11:52 GMT"
         },
         {
           "Name": "Cache-Control",

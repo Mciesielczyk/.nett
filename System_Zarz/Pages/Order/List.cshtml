@@ -16,7 +16,6 @@
         <th>Pojazd</th>
         <th>Mechanicy</th>
         <th>Zadania</th>
-        <th>Części</th>
         <th>Komentarze</th>
     </tr>
     </thead>
@@ -36,7 +35,6 @@
                 @string.Join(", ", order.Mechanics.Select(m => m.Mechanic.UserName))
             </td>
             <td>@order.Tasks.Count</td>
-            <td>@order.Parts.Count</td>
             <td>@order.Comments.Count</td>
         </tr>
     }

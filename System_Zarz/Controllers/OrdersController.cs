@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using System_Zarz.Data;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System_Zarz.Mappers;
+using System_Zarz.DTOs;
 
 namespace System_Zarz.Api
 {
@@ -11,10 +13,11 @@ namespace System_Zarz.Api
     public class OrdersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-
-        public OrdersController(ApplicationDbContext context)
+        private readonly OrderMapper _mapper;
+        public OrdersController(ApplicationDbContext context, OrderMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/orders
@@ -23,19 +26,9 @@ namespace System_Zarz.Api
         {
             var orders = await _context.Orders
                 .AsNoTracking()
-                .Select(o => new OrderDto
-                {
-                    Id = o.Id,
-                })
                 .ToListAsync();
-
-            return Ok(orders);
-        }
-
-        public class OrderDto
-        {
-            public int Id { get; set; }
-            public string Name { get; set; } = string.Empty;
+            var orderDtos = orders.Select(o => _mapper.ToDto(o));
+            return Ok(orderDtos);
         }
     }
 }

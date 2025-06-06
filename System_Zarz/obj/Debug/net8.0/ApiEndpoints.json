@@ -24,8 +24,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "CommentsController\u002BCommentCreateModel",
+        "Name": "dto",
+        "Type": "System_Zarz.DTOs.CommentDto",
         "IsRequired": true
       }
     ],
@@ -243,7 +243,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[System_Zarz.Api.OrdersController\u002BOrderDto, System_Zarz, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[System_Zarz.DTOs.OrderDto, System_Zarz, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

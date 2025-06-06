@@ -1,6 +1,6 @@
 ﻿using Riok.Mapperly.Abstractions;
 using System_Zarz.DTOs;
-using System_Zarz.Data; // <- U Ciebie encje są w `Data/`
+using System_Zarz.Data;
 
 namespace System_Zarz.Mappers;
 

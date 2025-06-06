@@ -34,17 +34,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CommentCreateModel"
+                "$ref": "#/components/schemas/CommentDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CommentCreateModel"
+                "$ref": "#/components/schemas/CommentDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CommentCreateModel"
+                "$ref": "#/components/schemas/CommentDto"
               }
             }
           }
@@ -830,16 +830,27 @@
         },
         "additionalProperties": false
       },
-      "CommentCreateModel": {
+      "CommentDto": {
         "type": "object",
         "properties": {
-          "orderId": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
           "text": {
             "type": "string",
             "nullable": true
+          },
+          "orderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "user": {
+            "$ref": "#/components/schemas/IdentityUser"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false

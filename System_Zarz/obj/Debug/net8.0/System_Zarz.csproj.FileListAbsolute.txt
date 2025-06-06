@@ -616,3 +616,26 @@ C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net8.0\System.IO.
 C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\ciesi\Desktop\Lato\.net\Projekt\System_Zarz\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\nlog.config
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.barcodes.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.bouncy-castle-connector.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.forms.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.io.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.kernel.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.layout.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.pdfa.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.pdfua.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.sign.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.styledxmlparser.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.svg.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\itext.commons.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\System.Net.Http.Formatting.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\NLog.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\NLog.Extensions.Logging.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\NLog.Web.AspNetCore.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\System.Text.Json.dll
+C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

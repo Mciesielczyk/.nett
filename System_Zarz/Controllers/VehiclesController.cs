@@ -36,7 +36,7 @@ namespace System_Zarz.Api
         {
             var vehicles = await _context.Vehicles.Include(v => v.Customer).ToListAsync();
             var vehicleDtos = vehicles.Select(v => _mapper.ToDto(v));
-            return Ok(vehicles);
+            return Ok(vehicleDtos);
         }
 
         // GET: api/vehicles/{id}

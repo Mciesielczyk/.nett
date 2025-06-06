@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System_Zarz.Data;
 using System.Security.Claims;
+using System_Zarz.Mappers;
+using System_Zarz.DTOs;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -10,10 +12,12 @@ using System.Security.Claims;
 public class CommentsController : ControllerBase
 {
     private readonly ApplicationDbContext _context;
+    private readonly CommentMapper _mapper;
 
-    public CommentsController(ApplicationDbContext context)
+    public CommentsController(ApplicationDbContext context, CommentMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
 
     // GET: api/comments?orderId=123  - pobierz komentarze z konkretnego zlecenia
@@ -27,21 +31,14 @@ public class CommentsController : ControllerBase
 
         var comments = await query
             .OrderBy(c => c.CreatedAt)
-            .Select(c => new 
-            {
-                c.Id,
-                c.Text,
-                Author = c.User.UserName,
-                c.CreatedAt,
-                c.OrderId
-            }).ToListAsync();
-
-        return Ok(comments);
+            .ToListAsync();
+        var commentDtos = comments.Select(c => _mapper.ToDto(c));
+        return Ok(commentDtos);
     }
 
     // POST: api/comments  - dodaj komentarz
     [HttpPost]
-    public async Task<IActionResult> AddComment([FromBody] CommentCreateModel model)
+    public async Task<IActionResult> AddComment([FromBody] CommentDto dto)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
@@ -52,8 +49,8 @@ public class CommentsController : ControllerBase
 
         var comment = new Comment
         {
-            OrderId = model.OrderId,
-            Text = model.Text,
+            OrderId = dto.OrderId,
+            Text = dto.Text,
             UserId = userId,
             CreatedAt = DateTime.UtcNow
         };
@@ -62,11 +59,5 @@ public class CommentsController : ControllerBase
         await _context.SaveChangesAsync();
 
         return CreatedAtAction(nameof(GetComments), new { orderId = comment.OrderId }, comment);
-    }
-
-    public class CommentCreateModel
-    {
-        public int OrderId { get; set; }
-        public string Text { get; set; } = string.Empty;
     }
 }

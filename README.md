@@ -1,167 +1,204 @@
-System zarządzania warsztatem samochodowym 2.0
+# System zarządzania warsztatem samochodowym 2.0
+
 Projekt zaliczeniowy z ASP.NET Core - kompleksowa aplikacja webowa do zarządzania warsztatem samochodowym.
-Funkcjonalności systemu
-🔐 System ról i uprawnień
+
+## Funkcjonalności systemu
+
+### 🔐 System ról i uprawnień
+
 Aplikacja obsługuje trzy typy użytkowników:
 
-Administrator - pełny dostęp do wszystkich funkcji
-Recepcjonista - obsługa klientów i przyjmowanie zleceń
-Mechanik - wykonywanie napraw i aktualizacja statusów
+**Administrator**  
+Pełny dostęp do wszystkich funkcji
 
-👤 Zarządzanie klientami
+**Recepcjonista**  
+Obsługa klientów i przyjmowanie zleceń
 
-Rejestracja nowych klientów
-Edycja danych kontaktowych
-Wyszukiwanie w bazie klientów
-Podgląd historii pojazdów każdego klienta
+**Mechanik**  
+Wykonywanie napraw i aktualizacja statusów
 
-🚘 Obsługa pojazdów
+### 👤 Zarządzanie klientami
 
-Dodawanie pojazdów z danymi (VIN, numer rejestracyjny)
-Upload i przechowywanie zdjęć pojazdów
-Powiązanie pojazdu z właścicielem
+- Rejestracja nowych klientów
+- Edycja danych kontaktowych
+- Wyszukiwanie w bazie klientów
+- Podgląd historii pojazdów każdego klienta
 
-🧾 System zleceń serwisowych
+### 🚘 Obsługa pojazdów
 
-Tworzenie nowych zleceń napraw
-Zarządzanie statusami (przyjęte, w trakcie, zakończone)
-Przypisywanie konkretnych mechaników do zleceń
-Śledzenie postępu prac
+- Dodawanie pojazdów z danymi (VIN, numer rejestracyjny)
+- Upload i przechowywanie zdjęć pojazdów
+- Powiązanie pojazdu z właścicielem
 
-🔧 Czynności i części zamienne
+### 🧾 System zleceń serwisowych
 
-Katalog dostępnych usług serwisowych z cenami robocizny
-Baza części zamiennych z kosztami
-Wybór i przypisywanie części do konkretnych napraw
-Automatyczne kalkulowanie kosztów
+- Tworzenie nowych zleceń napraw
+- Zarządzanie statusami (przyjęte, w trakcie, zakończone)
+- Przypisywanie konkretnych mechaników do zleceń
+- Śledzenie postępu prac
 
-💬 System komentarzy
+### 🔧 Czynności i części zamienne
 
-Wewnętrzne komentarze do każdego zlecenia
-Historia wszystkich działań i notatek
-Komunikacja między mechanikmi a recepcją
+- Katalog dostępnych usług serwisowych z cenami robocizny
+- Baza części zamiennych z kosztami
+- Wybór i przypisywanie części do konkretnych napraw
+- Automatyczne kalkulowanie kosztów
 
-📈 Raporty i analizy
+### 💬 System komentarzy
 
-Raporty kosztów napraw dla klientów
-Zestawienia miesięczne i roczne
-Analizy dla konkretnych pojazdów
-Eksport wszystkich raportów do PDF
+- Wewnętrzne komentarze do każdego zlecenia
+- Historia wszystkich działań i notatek
+- Komunikacja między mechanikami a recepcją
 
-Zaawansowane funkcje techniczne
-⚡ Optymalizacja wydajności
+### 📈 Raporty i analizy
 
-Indeksy bazodanowe - optymalizacja często wykonywanych zapytań
-SQL Profiler - monitorowanie i analiza zapytań do bazy danych
-Testy wydajności NBomber - symulacja obciążenia z 50 równoległymi użytkownikami
+- Raporty kosztów napraw dla klientów
+- Zestawienia miesięczne i roczne
+- Analizy dla konkretnych pojazdów
+- Eksport wszystkich raportów do PDF
 
-🤖 Automatyzacja procesów
+---
 
-GitHub Actions CI/CD - automatyczne budowanie, testowanie
-BackgroundService - codzienne generowanie i wysyłanie raportów mailem
-NLog - zaawansowane logowanie błędów i zdarzeń systemowych
+## Zaawansowane funkcje techniczne
 
-Struktura danych
-Klienci → Pojazdy → Zlecenia → Czynności → Części + Komentarze
+### ⚡ Optymalizacja wydajności
+
+- Indeksy bazodanowe - optymalizacja często wykonywanych zapytań
+- SQL Profiler - monitorowanie i analiza zapytań do bazy danych
+- Testy wydajności NBomber - symulacja obciążenia z 50 równoległymi użytkownikami
+
+### 🤖 Automatyzacja procesów
+
+- GitHub Actions CI/CD - automatyczne budowanie, testowanie
+- BackgroundService - codzienne generowanie i wysyłanie raportów mailem
+- NLog - zaawansowane logowanie błędów i zdarzeń systemowych
+
+---
+
+## Struktura danych
+
+**Klienci → Pojazdy → Zlecenia → Czynności → Części + Komentarze**
+
 Każde zlecenie może zawierać wiele czynności, każda czynność może wymagać różnych części, a cały proces jest dokumentowany przez komentarze i logi systemowe.
-System logowania i rejestracji
-🔐 Logowanie
+
+---
+
+## System logowania i rejestracji
+
+### 🔐 Logowanie
+
 Formularz logowania:
 
-Pole Email - identyfikacja użytkownika
-Pole Hasło - autoryzacja (ukryte znaki)
-Przycisk "Zaloguj" - wysłanie danych
-Link do rejestracji - dla nowych użytkowników
+- Pole **Email** - identyfikacja użytkownika
+- Pole **Hasło** - autoryzacja (ukryte znaki)
+- Przycisk **"Zaloguj"** - wysłanie danych
+- Link do **rejestracji** - dla nowych użytkowników
 
 Funkcje:
 
-Walidacja pól w czasie rzeczywistym
-Wyświetlanie błędów walidacji pod każdym polem
-Przekierowanie do panelu po udanym logowaniu
+- Walidacja pól w czasie rzeczywistym
+- Wyświetlanie błędów walidacji pod każdym polem
+- Przekierowanie do panelu po udanym logowaniu
 
-📝 Rejestracja
+### 📝 Rejestracja
+
 Formularz rejestracji:
 
-Email - adres e-mail nowego użytkownika
-Hasło - zabezpieczone pole tekstowe
-Potwierdź hasło - weryfikacja poprawności hasła
-Przycisk "Zarejestruj" - utworzenie konta
+- **Email** - adres e-mail nowego użytkownika
+- **Hasło** - zabezpieczone pole tekstowe
+- **Potwierdź hasło** - weryfikacja poprawności hasła
+- Przycisk **"Zarejestruj"** - utworzenie konta
 
 Zabezpieczenia:
 
-Walidacja email (format, unikalność)
-Walidacja hasła (długość, złożoność)
-Potwierdzenie hasła (musi być identyczne)
-Wyświetlanie wszystkich błędów walidacji
+- Walidacja email (format, unikalność)
+- Walidacja hasła (długość, złożoność)
+- Potwierdzenie hasła (musi być identyczne)
+- Wyświetlanie wszystkich błędów walidacji
 
-Role i uprawnienia w systemie
-👨‍💼 Administrator
+---
+
+## Role i uprawnienia w systemie
+
+### 👨‍💼 Administrator
+
 Pełny dostęp do wszystkich funkcji systemu:
-Zarządzanie klientami:
 
-Dodawanie nowych klientów
-Edytowanie danych klientów
-Przeglądanie listy wszystkich klientów
+**Zarządzanie klientami:**
 
-Zarządzanie użytkownikami:
+- Dodawanie nowych klientów
+- Edytowanie danych klientów
+- Przeglądanie listy wszystkich klientów
 
-Zarządzanie rolami innych użytkowników
+**Zarządzanie użytkownikami:**
 
-Zarządzanie pojazdami:
+- Zarządzanie rolami innych użytkowników
 
-Pełne zarządzanie pojazdami w systemie
+**Zarządzanie pojazdami:**
 
-Zarządzanie czynnościami serwisowymi:
+- Pełne zarządzanie pojazdami w systemie
 
-Zarządzanie dostępnymi czynnościami
-Przypisywanie czynności do zleceń
+**Zarządzanie czynnościami serwisowymi:**
 
-Zarządzanie zleceniami:
+- Zarządzanie dostępnymi czynnościami
+- Przypisywanie czynności do zleceń
 
-Tworzenie nowych zleceń
-Zmiana statusu zleceń
-Przeglądanie wszystkich zleceń
+**Zarządzanie zleceniami:**
 
-Pozostałe funkcje:
+- Tworzenie nowych zleceń
+- Zmiana statusu zleceń
+- Przeglądanie wszystkich zleceń
 
-Przeglądanie komentarzy
-Zarządzanie częściami zamiennymi
-Generowanie raportów
-Raporty napraw
+**Pozostałe funkcje:**
 
-👩‍💻 Recepcjonista
+- Przeglądanie komentarzy
+- Zarządzanie częściami zamiennymi
+- Generowanie raportów
+- Raporty napraw
+
+---
+
+### 👩‍💻 Recepcjonista
+
 Obsługa klientów i podstawowe zarządzanie zleceniami:
-Zarządzanie klientami:
 
-Dodawanie nowych klientów
-Edytowanie danych klientów
-Przeglądanie listy klientów
+**Zarządzanie klientami:**
 
-Zarządzanie pojazdami:
+- Dodawanie nowych klientów
+- Edytowanie danych klientów
+- Przeglądanie listy klientów
 
-Dodawanie pojazdów do klientów
+**Zarządzanie pojazdami:**
 
-Zarządzanie zleceniami:
+- Dodawanie pojazdów do klientów
 
-Tworzenie nowych zleceń dla pojazdów
+**Zarządzanie zleceniami:**
 
-Raporty:
+- Tworzenie nowych zleceń dla pojazdów
 
-Generowanie raportów
-Przeglądanie raportów napraw
+**Raporty:**
 
-🔧 Mechanik
+- Generowanie raportów
+- Przeglądanie raportów napraw
+
+---
+
+### 🔧 Mechanik
+
 Wykonywanie prac serwisowych:
-Zarządzanie pojazdami:
 
-Przeglądanie i zarządzanie pojazdami
+**Zarządzanie pojazdami:**
 
-Praca z zleceniami:
+- Przeglądanie i zarządzanie pojazdami
 
-Dodawanie czynności serwisowych do zleceń
-Zmiana statusu zleceń (np. "w trakcie", "zakończone")
+**Praca z zleceniami:**
 
-Wspólne dla wszystkich ról:
+- Dodawanie czynności serwisowych do zleceń
+- Zmiana statusu zleceń (np. "w trakcie", "zakończone")
 
-Wylogowanie się z systemu
-Dostęp do swojego profilu użytkownika
+---
+
+### Wspólne dla wszystkich ról:
+
+- Wylogowanie się z systemu
+- Dostęp do swojego profilu użytkownika

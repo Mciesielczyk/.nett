@@ -4,8 +4,11 @@ Funkcjonalności systemu
 Aplikacja obsługuje trzy typy użytkowników:
 
 Administrator - pełny dostęp do wszystkich funkcji
+
 Recepcjonista - obsługa klientów i przyjmowanie zleceń
+
 Mechanik - wykonywanie napraw i aktualizacja statusów
+
 
 👤 Zarządzanie klientami
 

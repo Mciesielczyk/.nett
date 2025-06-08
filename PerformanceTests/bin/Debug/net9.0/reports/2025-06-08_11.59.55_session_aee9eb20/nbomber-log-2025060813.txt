@@ -1,0 +1,13 @@
+2025-06-08 13:59:49.660 +02:00 [INF] [ThreadId:1] NBomber 6.0.2 started a new session: 2025-06-08_11.59.55_session_aee9eb20
+2025-06-08 13:59:49.732 +02:00 [INF] [ThreadId:1] NBomber started as single node
+2025-06-08 13:59:49.735 +02:00 [INF] [ThreadId:1] License validation....
+2025-06-08 13:59:49.736 +02:00 [WRN] [ThreadId:1] THIS VERSION IS FREE ONLY FOR PERSONAL USE. You can't use it for an organization.
+2025-06-08 13:59:49.850 +02:00 [INF] [ThreadId:1] Reports folder: C:\dev\nauka\.net\projekt z michalem\.nett\PerformanceTests\bin\Debug\net9.0\reports\2025-06-08_11.59.55_session_aee9eb20
+2025-06-08 13:59:49.851 +02:00 [INF] [ThreadId:1] Plugins: no plugins were loaded
+2025-06-08 13:59:49.851 +02:00 [INF] [ThreadId:1] Reporting sinks: no reporting sinks were loaded
+2025-06-08 13:59:49.852 +02:00 [INF] [ThreadId:1] Starting init...
+2025-06-08 13:59:49.861 +02:00 [INF] [ThreadId:1] Target scenarios: customers_api_test
+2025-06-08 13:59:49.864 +02:00 [INF] [ThreadId:1] Init finished
+2025-06-08 13:59:49.954 +02:00 [INF] [ThreadId:1] Starting warm up...
+2025-06-08 13:59:49.955 +02:00 [INF] [ThreadId:1] Warm up for scenarios: customers_api_test
+2025-06-08 13:59:49.962 +02:00 [INF] [ThreadId:1] Warm up duration: 00:00:05

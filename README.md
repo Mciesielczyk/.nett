@@ -1,14 +1,12 @@
+System zarządzania warsztatem samochodowym 2.0
 Projekt zaliczeniowy z ASP.NET Core - kompleksowa aplikacja webowa do zarządzania warsztatem samochodowym.
 Funkcjonalności systemu
 🔐 System ról i uprawnień
 Aplikacja obsługuje trzy typy użytkowników:
 
 Administrator - pełny dostęp do wszystkich funkcji
-
 Recepcjonista - obsługa klientów i przyjmowanie zleceń
-
 Mechanik - wykonywanie napraw i aktualizacja statusów
-
 
 👤 Zarządzanie klientami
 
@@ -63,34 +61,33 @@ GitHub Actions CI/CD - automatyczne budowanie, testowanie
 BackgroundService - codzienne generowanie i wysyłanie raportów mailem
 NLog - zaawansowane logowanie błędów i zdarzeń systemowych
 
+Struktura danych
 Klienci → Pojazdy → Zlecenia → Czynności → Części + Komentarze
-
 Każde zlecenie może zawierać wiele czynności, każda czynność może wymagać różnych części, a cały proces jest dokumentowany przez komentarze i logi systemowe.
-
 System logowania i rejestracji
 🔐 Logowanie
-Formularz logowania
+Formularz logowania:
 
 Pole Email - identyfikacja użytkownika
 Pole Hasło - autoryzacja (ukryte znaki)
 Przycisk "Zaloguj" - wysłanie danych
 Link do rejestracji - dla nowych użytkowników
 
-Funkcje
+Funkcje:
 
 Walidacja pól w czasie rzeczywistym
 Wyświetlanie błędów walidacji pod każdym polem
 Przekierowanie do panelu po udanym logowaniu
 
 📝 Rejestracja
-Formularz rejestracji
+Formularz rejestracji:
 
 Email - adres e-mail nowego użytkownika
 Hasło - zabezpieczone pole tekstowe
 Potwierdź hasło - weryfikacja poprawności hasła
 Przycisk "Zarejestruj" - utworzenie konta
 
-Zabezpieczenia
+Zabezpieczenia:
 
 Walidacja email (format, unikalność)
 Walidacja hasła (długość, złożoność)
@@ -132,7 +129,6 @@ Zarządzanie częściami zamiennymi
 Generowanie raportów
 Raporty napraw
 
-
 👩‍💻 Recepcjonista
 Obsługa klientów i podstawowe zarządzanie zleceniami:
 Zarządzanie klientami:
@@ -154,7 +150,6 @@ Raporty:
 Generowanie raportów
 Przeglądanie raportów napraw
 
-
 🔧 Mechanik
 Wykonywanie prac serwisowych:
 Zarządzanie pojazdami:
@@ -165,7 +160,6 @@ Praca z zleceniami:
 
 Dodawanie czynności serwisowych do zleceń
 Zmiana statusu zleceń (np. "w trakcie", "zakończone")
-
 
 Wspólne dla wszystkich ról:
 

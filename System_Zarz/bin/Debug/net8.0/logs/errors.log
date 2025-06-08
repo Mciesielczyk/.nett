@@ -1,0 +1,254 @@
+2025-06-08 20:12:38.8202|WARN|Microsoft.EntityFrameworkCore.Model.Validation|The foreign key property 'OrderPart.OrderId1' was created in shadow state because a conflicting property with the simple name 'OrderId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-06-08 20:12:38.8456|WARN|Microsoft.EntityFrameworkCore.Model.Validation|The foreign key property 'OrderTask.OrderId1' was created in shadow state because a conflicting property with the simple name 'OrderId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-06-08 20:12:38.8693|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No store type was specified for the decimal property 'Price' on entity type 'Part'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-08 20:12:38.8693|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No store type was specified for the decimal property 'UnitPrice' on entity type 'SparePart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-08 20:12:38.8693|WARN|Microsoft.EntityFrameworkCore.Model.Validation|No store type was specified for the decimal property 'LaborCost' on entity type 'Task'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-08 20:12:39.5983|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2025-06-08 20:12:39.6221|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-08 20:12:39.6221|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+2025-06-08 20:12:39.6221|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-08 20:12:39.6690|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-08 20:12:39.6874|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2025-06-08 20:12:39.7082|INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\dell\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-08 20:12:40.0328|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (68ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-08 20:12:40.1083|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-08 20:12:40.1117|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-08 20:12:40.1117|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-08 20:12:40.1352|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-08 20:12:40.1878|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-06-08 20:12:40.2409|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (12ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-06-08 20:12:40.5460|INFO|System_Zarz.Services.OrderReportService|Rozpoczynam generowanie raportu zleceń...
+2025-06-08 20:12:40.7677|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (70ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreatedDate], [o].[Description], [o].[Status], [o].[VehicleId], [v].[Id], [v].[Brand], [v].[CustomerId], [v].[ImagePath], [v].[Model], [v].[RegistrationNumber], [v].[VIN], [v].[Year], [c].[Id], [c].[Email], [c].[FullName], [c].[Phone], [t0].[OrderId], [t0].[TaskId], [t0].[OrderId1], [t0].[Id], [t0].[Description], [t0].[LaborCost]
+FROM [Orders] AS [o]
+INNER JOIN [Vehicles] AS [v] ON [o].[VehicleId] = [v].[Id]
+INNER JOIN [Customers] AS [c] ON [v].[CustomerId] = [c].[Id]
+LEFT JOIN (
+    SELECT [o0].[OrderId], [o0].[TaskId], [o0].[OrderId1], [t].[Id], [t].[Description], [t].[LaborCost]
+    FROM [OrderTasks] AS [o0]
+    INNER JOIN [Tasks] AS [t] ON [o0].[TaskId] = [t].[Id]
+) AS [t0] ON [o].[Id] = [t0].[OrderId]
+WHERE [o].[Status] <> N'Zakończone'
+ORDER BY [o].[Id], [v].[Id], [c].[Id], [t0].[OrderId], [t0].[TaskId]
+2025-06-08 20:12:40.9051|INFO|Microsoft.Hosting.Lifetime|Now listening on: https://localhost:7236
+2025-06-08 20:12:40.9051|INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5264
+2025-06-08 20:12:41.0251|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2025-06-08 20:12:41.0251|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2025-06-08 20:12:41.0251|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz
+2025-06-08 20:12:42.8084|ERROR|System_Zarz.Services.OrderReportService|Wystąpił błąd podczas generowania raportu.System.Net.Mail.SmtpException: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to
+   at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System_Zarz.Services.OrderReportService.SendEmailWithAttachmentAsync(Byte[] pdfBytes) in C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\Services\OrderReportService.cs:line 173
+   at System_Zarz.Services.OrderReportService.ExecuteAsync(CancellationToken stoppingToken) in C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\Services\OrderReportService.cs:line 48    at System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   at System.Net.Mail.MailCommand.EndSend(IAsyncResult result)
+   at System.Net.Mail.SendMailAsyncResult.SendMailFromCompleted(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SendMailAsyncResult.End(IAsyncResult result)
+   at System.Net.Mail.SmtpClient.SendMailCallback(IAsyncResult result)
+--- End of stack trace from previous location ---
+   at System_Zarz.Services.OrderReportService.SendEmailWithAttachmentAsync(Byte[] pdfBytes) in C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\Services\OrderReportService.cs:line 173
+   at System_Zarz.Services.OrderReportService.ExecuteAsync(CancellationToken stoppingToken) in C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\Services\OrderReportService.cs:line 48
+2025-06-08 20:12:44.2244|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/ - - -
+2025-06-08 20:12:44.3598|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'HTTP: GET /'
+2025-06-08 20:12:44.3598|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'HTTP: GET /'
+2025-06-08 20:12:44.3630|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/ - 302 0 - 139.4972ms
+2025-06-08 20:12:44.3630|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/Account/Login - - -
+2025-06-08 20:12:44.3785|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint '/Account/Login'
+2025-06-08 20:12:44.4095|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Route matched with {page = "/Account/Login", action = "", controller = ""}. Executing page /Account/Login
+2025-06-08 20:12:44.4289|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executing handler method System_Zarz.Pages.Account.LoginModel.OnGet - ModelState is Valid
+2025-06-08 20:12:44.4289|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed handler method OnGet, returned result .
+2025-06-08 20:12:44.4289|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executing an implicit handler method - ModelState is Valid
+2025-06-08 20:12:44.4289|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-06-08 20:12:44.5239|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed page /Account/Login in 108.5059ms
+2025-06-08 20:12:44.5239|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint '/Account/Login'
+2025-06-08 20:12:44.5239|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/Account/Login - 200 - text/html;+charset=utf-8 156.0541ms
+2025-06-08 20:12:44.6346|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - - -
+2025-06-08 20:12:44.6346|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/System_Zarz.styles.css?v=R00KX4_QriWQAc5hrfwSyBURMDjwCQdDD-YVUK0uFvw - - -
+2025-06-08 20:12:44.6442|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_vs/browserLink - - -
+2025-06-08 20:12:44.6442|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 10.3631ms
+2025-06-08 20:12:44.6442|INFO|Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware|Sending file. Request path: '/System_Zarz.styles.css'. Physical path: 'C:\dev\nauka\.net\projekt z michalem\.nett\System_Zarz\obj\Debug\net8.0\scopedcss\bundle\System_Zarz.styles.css'
+2025-06-08 20:12:44.6442|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/System_Zarz.styles.css?v=R00KX4_QriWQAc5hrfwSyBURMDjwCQdDD-YVUK0uFvw - 200 1129 text/css 15.4984ms
+2025-06-08 20:12:44.8197|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 175.4547ms
+2025-06-08 20:12:49.5059|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 POST https://localhost:7236/Account/Login - application/x-www-form-urlencoded 231
+2025-06-08 20:12:49.5059|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|CORS policy execution failed.
+2025-06-08 20:12:49.5059|INFO|Microsoft.AspNetCore.Cors.Infrastructure.CorsService|Request origin https://localhost:7236 does not have permission to access the resource.
+2025-06-08 20:12:49.5059|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint '/Account/Login'
+2025-06-08 20:12:49.5059|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Route matched with {page = "/Account/Login", action = "", controller = ""}. Executing page /Account/Login
+2025-06-08 20:12:49.5260|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executing handler method System_Zarz.Pages.Account.LoginModel.OnPostAsync - ModelState is Valid
+2025-06-08 20:12:49.5412|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-08 20:12:49.6366|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-06-08 20:12:49.6505|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-08 20:12:49.6505|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-08 20:12:49.6605|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-06-08 20:12:49.6605|INFO|Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler|AuthenticationScheme: Identity.Application signed in.
+2025-06-08 20:12:49.6605|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+2025-06-08 20:12:49.6605|INFO|Microsoft.AspNetCore.Mvc.RedirectToRouteResult|Executing RedirectToPageResult, redirecting to /Account/Profile.
+2025-06-08 20:12:49.6605|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed page /Account/Login in 153.2424ms
+2025-06-08 20:12:49.6605|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint '/Account/Login'
+2025-06-08 20:12:49.6605|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 POST https://localhost:7236/Account/Login - 302 0 - 162.6367ms
+2025-06-08 20:12:49.6605|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/Account/Profile - - -
+2025-06-08 20:12:49.6803|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint '/Account/Profile'
+2025-06-08 20:12:49.6803|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Route matched with {page = "/Account/Profile", action = "", controller = ""}. Executing page /Account/Profile
+2025-06-08 20:12:49.6803|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executing handler method System_Zarz.Pages.Account.ProfileModel.OnGetAsync - ModelState is Valid
+2025-06-08 20:12:49.6974|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-06-08 20:12:49.6974|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-08 20:12:49.6974|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-06-08 20:12:49.7166|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed page /Account/Profile in 32.6475ms
+2025-06-08 20:12:49.7166|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint '/Account/Profile'
+2025-06-08 20:12:49.7166|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/Account/Profile - 200 - text/html;+charset=utf-8 44.1142ms
+2025-06-08 20:12:49.7529|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_vs/browserLink - - -
+2025-06-08 20:12:49.7529|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - - -
+2025-06-08 20:12:49.7529|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 0.5321ms
+2025-06-08 20:12:49.7529|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 9.7303ms
+2025-06-08 20:12:54.7958|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/ManageRoles - - -
+2025-06-08 20:12:54.8006|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint '/ManageRoles'
+2025-06-08 20:12:54.8006|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Route matched with {page = "/ManageRoles", action = "", controller = ""}. Executing page /ManageRoles
+2025-06-08 20:12:54.8006|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executing handler method System_Zarz.Pages.Admin.ManageRolesModel.OnGetAsync - ModelState is Valid
+2025-06-08 20:12:54.8183|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2025-06-08 20:12:54.8183|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-08 20:12:54.8183|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-08 20:12:54.8183|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed handler method OnGetAsync, returned result .
+2025-06-08 20:12:54.8183|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executing an implicit handler method - ModelState is Valid
+2025-06-08 20:12:54.8183|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-06-08 20:12:54.8344|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed page /ManageRoles in 30.1908ms
+2025-06-08 20:12:54.8344|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint '/ManageRoles'
+2025-06-08 20:12:54.8344|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/ManageRoles - 200 - text/html;+charset=utf-8 38.9343ms
+2025-06-08 20:12:54.8704|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_vs/browserLink - - -
+2025-06-08 20:12:54.8704|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 5.5291ms
+2025-06-08 20:12:54.8930|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - - -
+2025-06-08 20:12:54.8930|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 0.4421ms
+2025-06-08 20:13:04.1538|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/Account/Profile - - -
+2025-06-08 20:13:04.1668|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint '/Account/Profile'
+2025-06-08 20:13:04.1668|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Route matched with {page = "/Account/Profile", action = "", controller = ""}. Executing page /Account/Profile
+2025-06-08 20:13:04.1668|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executing handler method System_Zarz.Pages.Account.ProfileModel.OnGetAsync - ModelState is Valid
+2025-06-08 20:13:04.1668|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-06-08 20:13:04.1755|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-08 20:13:04.1755|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-06-08 20:13:04.1755|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed page /Account/Profile in 11.4522ms
+2025-06-08 20:13:04.1755|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint '/Account/Profile'
+2025-06-08 20:13:04.1755|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/Account/Profile - 200 - text/html;+charset=utf-8 24.8431ms
+2025-06-08 20:13:04.2043|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_vs/browserLink - - -
+2025-06-08 20:13:04.2043|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - - -
+2025-06-08 20:13:04.2043|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 0.2710ms
+2025-06-08 20:13:04.2142|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 9.8671ms
+2025-06-08 20:13:10.7543|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/ManageRoles - - -
+2025-06-08 20:13:10.7543|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint '/ManageRoles'
+2025-06-08 20:13:10.7543|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Route matched with {page = "/ManageRoles", action = "", controller = ""}. Executing page /ManageRoles
+2025-06-08 20:13:10.7543|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executing handler method System_Zarz.Pages.Admin.ManageRolesModel.OnGetAsync - ModelState is Valid
+2025-06-08 20:13:10.7543|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2025-06-08 20:13:10.7543|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-08 20:13:10.7684|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-08 20:13:10.7684|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed handler method OnGetAsync, returned result .
+2025-06-08 20:13:10.7684|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executing an implicit handler method - ModelState is Valid
+2025-06-08 20:13:10.7684|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-06-08 20:13:10.7684|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed page /ManageRoles in 12.2783ms
+2025-06-08 20:13:10.7684|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint '/ManageRoles'
+2025-06-08 20:13:10.7684|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/ManageRoles - 200 - text/html;+charset=utf-8 17.1008ms
+2025-06-08 20:13:10.7994|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - - -
+2025-06-08 20:13:10.7994|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_vs/browserLink - - -
+2025-06-08 20:13:10.7994|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 0.3709ms
+2025-06-08 20:13:10.7994|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 10.7100ms
+2025-06-08 20:13:36.4969|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/Account/Profile - - -
+2025-06-08 20:13:36.4969|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint '/Account/Profile'
+2025-06-08 20:13:36.4969|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Route matched with {page = "/Account/Profile", action = "", controller = ""}. Executing page /Account/Profile
+2025-06-08 20:13:36.4969|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executing handler method System_Zarz.Pages.Account.ProfileModel.OnGetAsync - ModelState is Valid
+2025-06-08 20:13:36.5043|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-06-08 20:13:36.5043|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-08 20:13:36.5043|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-06-08 20:13:36.5043|INFO|Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker|Executed page /Account/Profile in 10.3903ms
+2025-06-08 20:13:36.5043|INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint '/Account/Profile'
+2025-06-08 20:13:36.5043|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/Account/Profile - 200 - text/html;+charset=utf-8 14.5876ms
+2025-06-08 20:13:36.5358|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - - -
+2025-06-08 20:13:36.5358|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/2 GET https://localhost:7236/_vs/browserLink - - -
+2025-06-08 20:13:36.5358|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript;+charset=utf-8 0.3996ms
+2025-06-08 20:13:36.5358|INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/2 GET https://localhost:7236/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 9.0096ms

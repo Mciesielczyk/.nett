@@ -34,4 +34,8 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="System_Zarz.Tests\Controllers\" />
+    </ItemGroup>
+
 </Project>

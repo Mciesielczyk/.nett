@@ -1,5 +1,4 @@
-O projekcie
-To projekt zaliczeniowy z ASP.NET Core - kompleksowa aplikacja webowa do zarządzania warsztatem samochodowym.
+Projekt zaliczeniowy z ASP.NET Core - kompleksowa aplikacja webowa do zarządzania warsztatem samochodowym.
 Funkcjonalności systemu
 🔐 System ról i uprawnień
 Aplikacja obsługuje trzy typy użytkowników:

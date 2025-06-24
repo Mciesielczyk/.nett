@@ -1,204 +1,143 @@
-# System zarządzania warsztatem samochodowym 2.0
+# System Zarządzania Serwisem Samochodowym
 
-Projekt zaliczeniowy z ASP.NET Core - kompleksowa aplikacja webowa do zarządzania warsztatem samochodowym.
+Witaj w repozytorium **Systemu Zarządzania Serwisem Samochodowym**! 
 
-## Funkcjonalności systemu
+Jest to aplikacja webowa, stworzona na projekt zaliczeniowy na przedmiot .NET (IV Semestr). Aplikacja ma na celu cyfryzację i usprawnienie procesów w nowoczesnym warsztacie samochodowym. 
 
-### 🔐 System ról i uprawnień
+##  Główne Założenia
 
-Aplikacja obsługuje trzy typy użytkowników:
+Aplikacja nie jest jedynie prostym systemem CRUD. To rozwiązanie, które symuluje realne środowisko pracy serwisu. Wśród głównych funkcji znajdziesz:
 
-**Administrator**  
-Pełny dostęp do wszystkich funkcji
+-   **Zarządzanie Użytkownikami i Rolami:** System rozróżnia uprawnienia dla **Administratora**, **Recepcjonisty** i **Mechanika**, zapewniając bezpieczeństwo i kontrolę dostępu.
+-   **Kompleksowa Obsługa Zleceń:** Od przyjęcia pojazdu, przez diagnozę, przypisanie zadań i części, aż po finalizację i raportowanie.
+-   **Automatyzacja i Komunikacja:** System automatycznie wysyła powiadomienia e-mail i generuje raporty w formacie PDF, minimalizując papierkową robotę.
+-   **Nowoczesny Stos Technologiczny:** Wykorzystanie najnowszych technologii z .NET gwarantuje wydajność, bezpieczeństwo i łatwość w dalszym rozwoju.
 
-**Recepcjonista**  
-Obsługa klientów i przyjmowanie zleceń
+##  Kluczowe Funkcjonalności
 
-**Mechanik**  
-Wykonywanie napraw i aktualizacja statusów
+-   **System Tożsamości:** Pełna obsługa rejestracji, logowania i autoryzacji w oparciu o **ASP.NET Core Identity**. Role (Admin, Recepcjonista, Mechanik) są automatycznie tworzone przy pierwszym uruchomieniu aplikacji.
+-   **Zarządzanie Klientami (CRM):** Baza klientów serwisu z historią ich pojazdów.
+-   **Zarządzanie Pojazdami:** Ewidencja pojazdów z możliwością dodawania **zdjęć**, co ułatwia identyfikację i dokumentację.
+-   **Moduł Zleceń Serwisowych:**
+    -   Tworzenie i śledzenie statusu zleceń (np. "Nowe", "W trakcie", "Zakończone").
+    -   Przypisywanie mechaników do konkretnych zleceń.
+    -   Dynamiczne dodawanie **zadań do wykonania** (np. "Wymiana oleju") oraz **części zamiennych** do zlecenia.
+-   **API RESTful:**  API do zarządzania zasobami (Klienci, Pojazdy, Zamówienia), udokumentowane przy użyciu **Swaggera**.
+-   **Generowanie PDF:** Usługa generująca raporty (np. podsumowania zleceń) w formacie PDF przy użyciu biblioteki **QuestPDF**.
+-   **Powiadomienia E-mail:** Wbudowany `EmailService` do wysyłania powiadomień.
+-   **Logowanie Błędów:** Zaawansowane logowanie zdarzeń i błędów w aplikacji za pomocą **NLog**.
+-   **Konteneryzacja:** Pełne wsparcie dla **Dockera**, co umożliwia łatwe wdrożenie i skalowanie.
 
-### 👤 Zarządzanie klientami
+##  Stos Technologiczny
 
-- Rejestracja nowych klientów
-- Edycja danych kontaktowych
-- Wyszukiwanie w bazie klientów
-- Podgląd historii pojazdów każdego klienta
+| Kategoria                | Technologia                                                                                             |
+| ------------------------ | ------------------------------------------------------------------------------------------------------- |
+| **Backend**              | .NET 8, ASP.NET Core (Web API, MVC, Razor Pages)                                                        |
+| **Baza Danych**          | Microsoft SQL Server                                                                                    |
+| **ORM**                  | Entity Framework Core 8                                                                                 |
+| **Uwierzytelnianie**     | ASP.NET Core Identity                                                                                   |
+| **API**                  | REST, Swagger (Swashbuckle)                                                                             |
+| **Generowanie PDF**      | QuestPDF                                                                                                |
+| **Logowanie**            | NLog                                                                                                    |
+| **Konteneryzacja**       | Docker                                                                                                  |
 
-### 🚘 Obsługa pojazdów
 
-- Dodawanie pojazdów z danymi (VIN, numer rejestracyjny)
-- Upload i przechowywanie zdjęć pojazdów
-- Powiązanie pojazdu z właścicielem
+##  Architektura i Wzorce Projektowe
 
-### 🧾 System zleceń serwisowych
 
-- Tworzenie nowych zleceń napraw
-- Zarządzanie statusami (przyjęte, w trakcie, zakończone)
-- Przypisywanie konkretnych mechaników do zleceń
-- Śledzenie postępu prac
+-   **Warstwa Danych:** `ApplicationDbContext` (Entity Framework Core) zarządza komunikacją z bazą danych. Modele encji definiują strukturę danych, a relacje między nimi są precyzyjnie określone w `OnModelCreating`.
+-   **Warstwa Logiki Biznesowej:** Serwisy (np. `EmailService`, `OrderReportService`) hermetyzują logikę biznesową, promując reużywalność kodu.
+-   **Warstwa Prezentacji i API:**
+    -   **Kontrolery API** (`[ApiController]`) udostępniają zasoby poprzez RESTful HTTP.
+    -   **Kontrolery MVC i Strony Razor** odpowiadają za renderowanie interfejsu użytkownika.
+-   **Wstrzykiwanie Zależności (DI):** Intensywnie wykorzystywane do zarządzania cyklem życia usług i zmniejszania powiązań między komponentami.
+-   **DTOs i Mappery:** Użycie obiektów DTO (Data Transfer Objects) i mapperów (np. `VehicleMapper`) do oddzielenia modeli domeny od modeli widoku/API, co zwiększa bezpieczeństwo i elastyczność.
 
-### 🔧 Czynności i części zamienne
+##  Dodatkowe narzędzia i technologie
 
-- Katalog dostępnych usług serwisowych z cenami robocizny
-- Baza części zamiennych z kosztami
-- Wybór i przypisywanie części do konkretnych napraw
-- Automatyczne kalkulowanie kosztów
 
-### 💬 System komentarzy
+###  1. Optymalizacja Wydajności Bazy Danych za Pomocą Indeksów
+Sprawdziłem, jak działają kluczowe zapytania bez indeksów i po dodaniu indeksów nieklastrowanych. Po optymalizacji widać było poprawę wydajności – zapytania wykonywały się szybciej, co potwierdziła analiza planów zapytań.
 
-- Wewnętrzne komentarze do każdego zlecenia
-- Historia wszystkich działań i notatek
-- Komunikacja między mechanikami a recepcją
+![image](https://github.com/user-attachments/assets/04118703-c512-4c6e-9e99-61cd7ba9286f)
+![image](https://github.com/user-attachments/assets/e5112bd7-b004-467c-99d2-a39fec1698dc)
 
-### 📈 Raporty i analizy
 
-- Raporty kosztów napraw dla klientów
-- Zestawienia miesięczne i roczne
-- Analizy dla konkretnych pojazdów
-- Eksport wszystkich raportów do PDF
+###  2. Monitoring i Analiza Zapytań SQL
+W celu pełnej kontroli nad interakcją aplikacji z bazą danych, wykorzystano **SQL Server Profiler** oraz mechanizmy logowania zapytań w **Entity Framework Core**. Pozwoliło to na "podsłuchanie" i analizę surowych zapytań SQL generowanych przez kod dla konkretnych endpointów API. Dzięki temu mamy pewność, że ORM tłumaczy zapytania w sposób optymalny.
 
----
+![image](https://github.com/user-attachments/assets/f1b51ba1-90cd-4494-81e0-b16d99688592)
+![image](https://github.com/user-attachments/assets/04a94966-e70d-45be-ae6e-c7d9c4a5b4d8)
 
-## Zaawansowane funkcje techniczne
 
-### ⚡ Optymalizacja wydajności
+###  3. Automatyzacja Procesów z GitHub Actions (CI/CD)
+Projekt wykorzystuje **GitHub Actions** do automatyzacji procesów ciągłej integracji (CI). Skonfigurowany workflow automatycznie:
+-   Buduje projekt (`dotnet build`) przy każdym pushu do repozytorium.
 
-- Indeksy bazodanowe - optymalizacja często wykonywanych zapytań
-- SQL Profiler - monitorowanie i analiza zapytań do bazy danych
-- Testy wydajności NBomber - symulacja obciążenia z 50 równoległymi użytkownikami
 
-### 🤖 Automatyzacja procesów
+###  4.  Logowanie z NLog
+Aplikacja posiada system logowania oparty o bibliotekę **NLog**. Konfiguracja pozwala na zapisywanie logów o różnym poziomie ważności (od śledzenia po błędy krytyczne) do plików tekstowych. Mechanizm logowania jest wstrzykiwany do serwisów i kontrolerów przez **Dependency Injection (`ILogger<T>`)**, co ułatwia monitorowanie oraz diagnostykę aplikacji.
 
-- GitHub Actions CI/CD - automatyczne budowanie, testowanie
-- BackgroundService - codzienne generowanie i wysyłanie raportów mailem
-- NLog - zaawansowane logowanie błędów i zdarzeń systemowych
+![image](https://github.com/user-attachments/assets/33b77aa9-b65a-4ef9-af9f-60609516d9d0)
 
----
+Logi odpowiedzialne:
 
-## Struktura danych
+![image](https://github.com/user-attachments/assets/7762808a-d471-40f3-95c8-c3a1dab57b35)
 
-**Klienci → Pojazdy → Zlecenia → Czynności → Części + Komentarze**
+###  5. Usługi w Tle i Automatyczne Raportowanie
+Zaimplementowałem mechanizm usług działających w tle (`BackgroundService`) do obsługi zadań cyklicznych. Przykładem jest usługa, która **raz dziennie generuje raport PDF** z listą otwartych zleceń serwisowych. Następnie, gotowy raport jest **automatycznie wysyłany jako załącznik e-mail** do administratora systemu, co pokazuje zdolność aplikacji do wykonywania autonomicznych, zaplanowanych operacji.
 
-Każde zlecenie może zawierać wiele czynności, każda czynność może wymagać różnych części, a cały proces jest dokumentowany przez komentarze i logi systemowe.
+Przykładowy raport
+![image](https://github.com/user-attachments/assets/c92c23f7-a2ee-4463-8f40-584367446cad)
 
----
 
-## System logowania i rejestracji
+###  6. Testy Wydajnościowe z NBomber
+Przetestowałem, jak system radzi sobie pod obciążeniem, używając NBombera. Symulowałem wielu jednoczesnych użytkowników, którzy uderzali w jeden z kluczowych endpointów API. 
 
-### 🔐 Logowanie
 
-Formularz logowania:
 
-- Pole **Email** - identyfikacja użytkownika
-- Pole **Hasło** - autoryzacja (ukryte znaki)
-- Przycisk **"Zaloguj"** - wysłanie danych
-- Link do **rejestracji** - dla nowych użytkowników
+## Setup
 
-Funkcje:
+1.  **Sklonuj repozytorium:**
+    ```bash
+    git clone [URL-do-repozytorium]
+    cd [nazwa-katalogu]
+    ```
 
-- Walidacja pól w czasie rzeczywistym
-- Wyświetlanie błędów walidacji pod każdym polem
-- Przekierowanie do panelu po udanym logowaniu
+2.  **Skonfiguruj Connection String:**
+    Otwórz plik `appsettings.json` i zaktualizuj `DefaultConnection` do swojej instancji SQL Server.
+    ```json
+    "ConnectionStrings": {
+      "DefaultConnection": "Server=TWOJ_SERWER;Database=SystemZarz;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False"
+    }
+    ```
 
-### 📝 Rejestracja
+3.  **Uruchom aplikację:**
+    ```bash
+    dotnet run
+    ```
+    Aplikacja automatycznie:
+    -   Zastosuje migracje i utworzy bazę danych, jeśli nie istnieje.
+    -   Utworzy role: `Admin`, `User`, `Recepcjonista`, `Mechanik`.
+    -   Stworzy domyślnego użytkownika **Admina** z danymi logowania:
+        -   **Email:** `admin@1`
+        -   **Hasło:** `Admin123!`
 
-Formularz rejestracji:
-
-- **Email** - adres e-mail nowego użytkownika
-- **Hasło** - zabezpieczone pole tekstowe
-- **Potwierdź hasło** - weryfikacja poprawności hasła
-- Przycisk **"Zarejestruj"** - utworzenie konta
-
-Zabezpieczenia:
-
-- Walidacja email (format, unikalność)
-- Walidacja hasła (długość, złożoność)
-- Potwierdzenie hasła (musi być identyczne)
-- Wyświetlanie wszystkich błędów walidacji
-
----
-
-## Role i uprawnienia w systemie
-
-### 👨‍💼 Administrator
-
-Pełny dostęp do wszystkich funkcji systemu:
-
-**Zarządzanie klientami:**
-
-- Dodawanie nowych klientów
-- Edytowanie danych klientów
-- Przeglądanie listy wszystkich klientów
-
-**Zarządzanie użytkownikami:**
-
-- Zarządzanie rolami innych użytkowników
-
-**Zarządzanie pojazdami:**
-
-- Pełne zarządzanie pojazdami w systemie
-
-**Zarządzanie czynnościami serwisowymi:**
-
-- Zarządzanie dostępnymi czynnościami
-- Przypisywanie czynności do zleceń
-
-**Zarządzanie zleceniami:**
-
-- Tworzenie nowych zleceń
-- Zmiana statusu zleceń
-- Przeglądanie wszystkich zleceń
-
-**Pozostałe funkcje:**
-
-- Przeglądanie komentarzy
-- Zarządzanie częściami zamiennymi
-- Generowanie raportów
-- Raporty napraw
+4.  **Przeglądaj API:**
+    Przejdź pod adres `https://localhost:[PORT]/swagger`, aby zobaczyć interaktywną dokumentację API.
 
 ---
 
-### 👩‍💻 Recepcjonista
 
-Obsługa klientów i podstawowe zarządzanie zleceniami:
+## Przykład jak działa aplikacja:
+![image](https://github.com/user-attachments/assets/2dcaa9d3-d40a-405b-ab44-3489132f9525)
+![image](https://github.com/user-attachments/assets/09aab209-b854-46c5-9c8e-b26de04f7f04)
+![image](https://github.com/user-attachments/assets/54ecafda-4f8c-46c8-85f9-05ad4280e1b5)
 
-**Zarządzanie klientami:**
 
-- Dodawanie nowych klientów
-- Edytowanie danych klientów
-- Przeglądanie listy klientów
+Swagger - Przez autoryzacje nie można testować zapytań.
 
-**Zarządzanie pojazdami:**
 
-- Dodawanie pojazdów do klientów
+![image](https://github.com/user-attachments/assets/9b866058-d31e-46df-9670-e19ea5ed5d30)
 
-**Zarządzanie zleceniami:**
-
-- Tworzenie nowych zleceń dla pojazdów
-
-**Raporty:**
-
-- Generowanie raportów
-- Przeglądanie raportów napraw
-
----
-
-### 🔧 Mechanik
-
-Wykonywanie prac serwisowych:
-
-**Zarządzanie pojazdami:**
-
-- Przeglądanie i zarządzanie pojazdami
-
-**Praca z zleceniami:**
-
-- Dodawanie czynności serwisowych do zleceń
-- Zmiana statusu zleceń (np. "w trakcie", "zakończone")
-
----
-
-### Wspólne dla wszystkich ról:
-
-- Wylogowanie się z systemu
-- Dostęp do swojego profilu użytkownika
+Dziękuję za dotarcie do końca. Mam nadzieję, że projekt okazał się interesujący :)
